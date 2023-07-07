@@ -6,6 +6,7 @@ public class HandInHole_Detection : MonoBehaviour
 {
     [SerializeField] private Transform hand;
     [SerializeField] private HandMoving handMoving;
+    [SerializeField] private Hand_Grab handGrab;
     [SerializeField] private GameObject handMask;
     [SerializeField, ShowOnly] private HAND_IN_HOLE_STATE handState = HAND_IN_HOLE_STATE.ON_TOP;
 [Header("Garbage Spawn")]
@@ -15,6 +16,8 @@ public class HandInHole_Detection : MonoBehaviour
     private bool grabbedMonitor = false;
     private float garbageSpawnTimer = 0;
     private Transform spawnedGarbage;
+    private Collider2D hitbox;
+    void Awake()=>hitbox = GetComponent<Collider2D>();
     private void OnTriggerEnter2D(Collider2D other){
         if(other.transform == hand){
             switch(handState){
@@ -39,7 +42,7 @@ public class HandInHole_Detection : MonoBehaviour
                         grabbed = true;
                         garbageSpawnTimer = 0;
                         spawnedGarbage = garbageSpawner.Spawn_Garbage(out grabbedMonitor);
-                        handMoving.GrabItem(spawnedGarbage);
+                        handGrab.GrabItem(spawnedGarbage);
                     }
                 }
                 break;
@@ -60,15 +63,28 @@ public class HandInHole_Detection : MonoBehaviour
                     handState = HAND_IN_HOLE_STATE.OUT_BOUND;
                     handMoving.lerpSpeed = 5f;
                     if(grabbed){
-                        if(grabbedMonitor){
-                            handMoving.ThrowItem(spawnedGarbage);
+                        if(!grabbedMonitor){
+                            grabbed = false;
+                            StartCoroutine(coroutineReset());
+                            handMask.SetActive(false);
+                            handGrab.ThrowItem(spawnedGarbage);
+                            spawnedGarbage = null;
                         }
                         else{
-                            handMoving.KeepItem(spawnedGarbage);
+                            handMask.SetActive(false);
+                            hitbox.enabled = false;
+                            this.enabled = false;
+                            handGrab.KeepItem(spawnedGarbage);
                         }
                     }
                     break;
             }
         }
+    }
+    IEnumerator coroutineReset(){
+        hitbox.enabled = false;
+        handState = HAND_IN_HOLE_STATE.ON_TOP;
+        yield return new WaitForSeconds(3f);
+        hitbox.enabled = true;
     }
 }

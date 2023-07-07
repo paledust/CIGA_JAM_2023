@@ -6,8 +6,6 @@ using UnityEngine;
 //A basic C# Event System
 public static class EventHandler
 {
-    public static event Action<bool> E_OnSpawnGarbage;
-    public static void Call_OnSpawnGarbage(bool spawnMonitor)=>E_OnSpawnGarbage?.Invoke(spawnMonitor);
 }
 
 //A More Strict Event System

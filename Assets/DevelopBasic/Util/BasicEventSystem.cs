@@ -6,11 +6,8 @@ using UnityEngine;
 //A basic C# Event System
 public static class EventHandler
 {
-    //This is a test event and it's calling function
-    public static event Action<float> E_OnTestEvent;
-    public static void Call_OnTestEvent(float data){
-        E_OnTestEvent?.Invoke(data);
-    }
+    public static event Action<bool> E_OnSpawnGarbage;
+    public static void Call_OnSpawnGarbage(bool spawnMonitor)=>E_OnSpawnGarbage?.Invoke(spawnMonitor);
 }
 
 //A More Strict Event System

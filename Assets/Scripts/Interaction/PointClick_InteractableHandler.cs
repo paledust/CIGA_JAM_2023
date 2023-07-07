@@ -12,11 +12,14 @@ public class PointClick_InteractableHandler : MonoBehaviour
     private Camera playerCam;
     private BasicPointAndClickInteractable hoveringInteractable;
     private BasicPointAndClickInteractable holdingInteractable;
-    public static Vector2 MouseScrPos{get{return Mouse.current.position.ReadValue();}}
+    public static Vector2 MouseScrPos{get; private set;}
     void Awake(){
         playerCam = Camera.main;
+        MouseScrPos = new Vector2(Screen.width, Screen.height);
+        Cursor.lockState = CursorLockMode.Confined;
     }
     void Update(){
+        MouseScrPos = Mouse.current.position.ReadValue();
         if(interactionLock > 0) return;
         Ray ray = playerCam.ScreenPointToRay(MouseScrPos);
         if(Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, Service.interactableLayer)){

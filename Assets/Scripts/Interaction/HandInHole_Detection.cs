@@ -74,7 +74,7 @@ public class HandInHole_Detection : MonoBehaviour
                             handMask.SetActive(false);
                             hitbox.enabled = false;
                             this.enabled = false;
-                            handGrab.KeepItem(spawnedGarbage);
+                            handGrab.AttachMonitor(spawnedGarbage);
                         }
                     }
                     break;
@@ -84,7 +84,7 @@ public class HandInHole_Detection : MonoBehaviour
     IEnumerator coroutineReset(){
         hitbox.enabled = false;
         handState = HAND_IN_HOLE_STATE.ON_TOP;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
         hitbox.enabled = true;
     }
 }

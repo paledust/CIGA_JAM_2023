@@ -203,8 +203,8 @@ TextureImporter:
       name: Eye_Ball
       rect:
         serializedVersion: 2
-        x: 32
-        y: 141
+        x: 51
+        y: 332
         width: 227
         height: 227
       alignment: 0
@@ -262,6 +262,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Fish_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 326
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fd5ec5b533cee45a3fd4fd73d7449a
+      internalID: 976528442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fish_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1172
+        width: 361
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6763324bd20ae5e48b3a8df2f7a2039a
+      internalID: 1246515132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -275,7 +317,9 @@ TextureImporter:
     nameFileIdTable:
       Eye_Ball: -812869798
       Bottle_1: 1917392237
+      Fish_1: 1246515132
       Garbages_7: 1428032239
+      Fish_0: 976528442
       Plastic_Bag: 225560307
       Bottle_0: 35109203
       Octopus: -557035080

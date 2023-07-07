@@ -26,14 +26,21 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
         Application.targetFrameRate = targetFrameRate;
 
+    #if UNITY_EDITOR
         if(loadInitSceneFromGameManager){StartCoroutine(SwitchSceneCoroutine(string.Empty, InitScene));}
-
+    #else
+        StartCoroutine(SwitchSceneCoroutine(string.Empty, InitScene));
+    #endif
+    
         debugActions["restart"].performed += Debug_RestartLevel;
+
         if(isTesting) debugActions.Enable();
     }
     protected override void OnDestroy(){
         base.OnDestroy();
+
         debugActions["restart"].performed -= Debug_RestartLevel;
+
         if(debugActions.enabled)debugActions.Disable();
     }
     public void SwitchingScene(string from, string to){
@@ -64,17 +71,30 @@ public class GameManager : Singleton<GameManager>
 #endregion
 
     public void EndGame(){
-        if(isDemo) demoText.gameObject.SetActive(true);
-        StartCoroutine(FadeInScreen(2));
+        if(isDemo) {demoText.gameObject.SetActive(true);}
+        string currentLevel = SceneManager.GetActiveScene().name;
+        StartCoroutine(EndGameCoroutine(currentLevel));
     }
     public void RestartLevel(){
         string currentLevel = SceneManager.GetActiveScene().name;
         StartCoroutine(RestartLevel(currentLevel));
     }
+    public void RestartLevel_DEBUG(){
+        string currentLevel = SceneManager.GetActiveScene().name;
+        StartCoroutine(RestartLevel(currentLevel, true));
+    }
 
 #region Scene Transition
-    IEnumerator RestartLevel(string level){
+    IEnumerator EndGameCoroutine(string level){
         yield return FadeInScreen(3f);
+        //TO DO:Save Game before unload the scene
+        yield return SceneManager.UnloadSceneAsync(level);
+        yield return new WaitForSeconds(1f);
+        Debug.Log("EndGame");
+        Application.Quit();
+    }
+    IEnumerator RestartLevel(string level, bool isDebug = false){
+        if(isDebug) yield return FadeInScreen(3f);
         isSwitchingScene = true;
 
         //TO DO: do something before the last scene is unloaded. e.g: call event of saving 

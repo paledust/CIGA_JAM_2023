@@ -14,6 +14,9 @@ public class GameManager : Singleton<GameManager>
 [Header("Init")]
     [SerializeField] private bool loadInitSceneFromGameManager = false;
     [SerializeField] private string InitScene;
+[Header("Loading Screen")]
+    [SerializeField] private float[] journeyProgress;
+    private int levelIndex;
 [Header("Demo")]
     [SerializeField] private bool isDemo = true;
     [SerializeField] private bool isTesting = true;

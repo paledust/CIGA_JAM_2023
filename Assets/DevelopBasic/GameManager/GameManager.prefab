@@ -130,6 +130,10 @@ MonoBehaviour:
   transitionDuration: 0.5
   loadInitSceneFromGameManager: 0
   InitScene: Village
+  journeyProgress:
+  - 0.31
+  - 0.65
+  - 1
   isDemo: 0
   isTesting: 1
   demoText: {fileID: 6073298263620526879}

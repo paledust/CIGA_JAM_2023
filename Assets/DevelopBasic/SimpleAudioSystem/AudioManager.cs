@@ -11,6 +11,8 @@ namespace SimpleAudioSystem{
         private AudioSource ambience_loop;
         [SerializeField]
         private AudioSource music_loop;
+        [SerializeField]
+        private AudioSource sfx_audio;
         string current_ambience_name = string.Empty;
         string current_music_name = string.Empty;
         private bool ambience_crossfading = false;
@@ -38,6 +40,12 @@ namespace SimpleAudioSystem{
             if(ambience_loop.clip != null)
                 ambience_loop.volume = volume;
                 ambience_loop.Play();
+        }
+        public void PlaySoundEffect(string audio_name, float volumeScale){
+            AudioClip clip = audioInfo.GetSFXClipByName(audio_name);
+            if(clip!=null){
+                sfx_audio.PlayOneShot(clip, volumeScale);
+            }  
         }
         public void PlaySoundEffect(AudioSource targetSource, string audio_name, float volumeScale){
             AudioClip clip = audioInfo.GetSFXClipByName(audio_name);

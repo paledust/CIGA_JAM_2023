@@ -11,10 +11,35 @@ public class HandInHole_Detection : MonoBehaviour
     [SerializeField, ShowOnly] private HAND_IN_HOLE_STATE handState = HAND_IN_HOLE_STATE.ON_TOP;
 [Header("Garbage Spawn")]
     [SerializeField] private HandGrabbing_Detection handGrabbing_Detection;
+[Header("Audio")]
+    [SerializeField] private AudioSource searchingLoop_Audio;
+    [SerializeField] private AudioClip sfx_searchLoop_clip;
+    [SerializeField] private AudioClip sfx_reach_clip;
+    [SerializeField] private float soundLerpSpeed = 5;
     private Collider2D hitbox;
     void Awake(){
         handGrabbing_Detection.gameObject.SetActive(false);
+        searchingLoop_Audio.clip = sfx_searchLoop_clip;
+        searchingLoop_Audio.volume = 0;
         hitbox = GetComponent<Collider2D>();
+    }
+    void Update(){
+        switch (handState){
+            case HAND_IN_HOLE_STATE.IN_HOLE:
+                if(handMoving.positionOffset.magnitude>1){
+                    if(!searchingLoop_Audio.isPlaying){
+                        searchingLoop_Audio.Play();
+                    }
+                    searchingLoop_Audio.volume = Mathf.Lerp(searchingLoop_Audio.volume, 1, Time.deltaTime * soundLerpSpeed);
+                }
+                else{
+                    searchingLoop_Audio.volume = Mathf.Lerp(searchingLoop_Audio.volume, 0, Time.deltaTime * soundLerpSpeed);
+                }
+                break;
+            default:
+                searchingLoop_Audio.volume = Mathf.Lerp(searchingLoop_Audio.volume, 0, Time.deltaTime * soundLerpSpeed);
+                break;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other){
         if(other.transform == hand){
@@ -24,6 +49,7 @@ public class HandInHole_Detection : MonoBehaviour
                 case HAND_IN_HOLE_STATE.OUT_BOUND:
                     handGrabbing_Detection.gameObject.SetActive(true);
                     handState = HAND_IN_HOLE_STATE.IN_HOLE;
+                    searchingLoop_Audio.PlayOneShot(sfx_reach_clip);
                     handMoving.lerpSpeed = 1.5f;
                     break;
                 case HAND_IN_HOLE_STATE.IN_HOLE:
@@ -44,10 +70,9 @@ public class HandInHole_Detection : MonoBehaviour
                     handGrabbing_Detection.gameObject.SetActive(false);
                     handState = HAND_IN_HOLE_STATE.OUT_BOUND;
                     handMoving.lerpSpeed = 5f;
+                    searchingLoop_Audio.PlayOneShot(sfx_reach_clip);
                     if(handGrabbing_Detection.Grabbed){
                         if(!handGrabbing_Detection.GrabbedMonitor){
-                            // grabbed = false;
-                            // spawnedGarbage = null;
                             StartCoroutine(coroutineReset());
                             handMask.SetActive(false);
                             handGrab.ThrowItem(handGrabbing_Detection.SpawnedGarbage);
@@ -56,7 +81,6 @@ public class HandInHole_Detection : MonoBehaviour
                         else{
                             handMask.SetActive(false);
                             hitbox.enabled = false;
-                            this.enabled = false;
                             handGrab.AttachMonitor(handGrabbing_Detection.SpawnedGarbage);
                         }
                     }

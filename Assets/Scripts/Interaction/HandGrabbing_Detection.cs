@@ -12,6 +12,7 @@ public class HandGrabbing_Detection : MonoBehaviour
     [SerializeField] private GarbageSpawner garbageSpawner;
     [SerializeField] private float garbageSpawnTime = 2f;
     public bool grabbedMonitor = false;
+    public bool Grabbed{get{return handState == HAND_GRAB_STATE.GRAB;}}
     public bool GrabbedMonitor{get{return grabbedMonitor;}}
     public float GarbageSpawnTimer{get; private set;} = 0;
     public Transform SpawnedGarbage{get; private set;}
@@ -58,13 +59,20 @@ public class HandGrabbing_Detection : MonoBehaviour
         if(other.transform == hand){
             switch(handState){
                 case HAND_GRAB_STATE.IDLE:
+                    GarbageSpawnTimer = 0;
                     break;
                 case HAND_GRAB_STATE.FINDING:
+                    GarbageSpawnTimer = 0;
+                    handState = HAND_GRAB_STATE.IDLE;
                     break;
                 case HAND_GRAB_STATE.GRAB:
                     handMoving.lerpSpeed = 5f;
                     break;
             }
         }
+    }
+    public void ResetGrab(){
+        handState = HAND_GRAB_STATE.IDLE;
+        SpawnedGarbage = null;
     }
 }

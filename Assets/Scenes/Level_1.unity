@@ -864,8 +864,6 @@ MonoBehaviour:
   handMask: {fileID: 694010599}
   handState: 0
   handGrabbing_Detection: {fileID: 961066515}
-  garbageSpawner: {fileID: 473651489}
-  garbageSpawnTime: 2
 --- !u!60 &473651488
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1834,7 +1832,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &961066512
 Transform:
   m_ObjectHideFlags: 0
@@ -1843,7 +1841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961066511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.79, z: 0}
+  m_LocalPosition: {x: 0, y: 3.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1928,6 +1926,7 @@ MonoBehaviour:
   handState: 0
   garbageSpawner: {fileID: 961066514}
   garbageSpawnTime: 2
+  grabbedMonitor: 0
 --- !u!1 &973057431
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,21 +11,18 @@ public class HandInHole_Detection : MonoBehaviour
     [SerializeField, ShowOnly] private HAND_IN_HOLE_STATE handState = HAND_IN_HOLE_STATE.ON_TOP;
 [Header("Garbage Spawn")]
     [SerializeField] private HandGrabbing_Detection handGrabbing_Detection;
-    // [SerializeField] private GarbageSpawner garbageSpawner;
-    // [SerializeField] private float garbageSpawnTime = 2f;
-    private bool grabbed = false;
-    private bool grabbedMonitor = false;
-    private float garbageSpawnTimer = 0;
-    private Transform spawnedGarbage;
     private Collider2D hitbox;
-    void Awake()=>hitbox = GetComponent<Collider2D>();
+    void Awake(){
+        handGrabbing_Detection.gameObject.SetActive(false);
+        hitbox = GetComponent<Collider2D>();
+    }
     private void OnTriggerEnter2D(Collider2D other){
         if(other.transform == hand){
             switch(handState){
                 case HAND_IN_HOLE_STATE.ON_TOP:
                     break;
                 case HAND_IN_HOLE_STATE.OUT_BOUND:
-                    garbageSpawnTimer = 0;
+                    handGrabbing_Detection.gameObject.SetActive(true);
                     handState = HAND_IN_HOLE_STATE.IN_HOLE;
                     handMoving.lerpSpeed = 1;
                     break;
@@ -34,23 +31,6 @@ public class HandInHole_Detection : MonoBehaviour
             }            
         }
     }
-    // void Update(){
-    //     switch (handState){
-    //         case HAND_IN_HOLE_STATE.IN_HOLE:
-    //             if(handMoving.positionOffset.magnitude>1){
-    //                 garbageSpawnTimer += Time.deltaTime;
-    //                 if(!grabbed && garbageSpawnTimer>garbageSpawnTime){
-    //                     grabbed = true;
-    //                     garbageSpawnTimer = 0;
-    //                     spawnedGarbage = garbageSpawner.Spawn_Garbage(out grabbedMonitor);
-    //                     handGrab.GrabItem(spawnedGarbage);
-    //                 }
-    //             }
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
     private void OnTriggerExit2D(Collider2D other){
         if(other.transform == hand){
             switch(handState){
@@ -61,23 +41,23 @@ public class HandInHole_Detection : MonoBehaviour
                 case HAND_IN_HOLE_STATE.OUT_BOUND:
                     break;
                 case HAND_IN_HOLE_STATE.IN_HOLE:
+                    handGrabbing_Detection.gameObject.SetActive(false);
                     handState = HAND_IN_HOLE_STATE.OUT_BOUND;
                     handMoving.lerpSpeed = 5f;
                     if(handGrabbing_Detection.Grabbed){
                         if(!handGrabbing_Detection.GrabbedMonitor){
                             // grabbed = false;
                             // spawnedGarbage = null;
-                            handGrabbing_Detection.ResetGrab();
                             StartCoroutine(coroutineReset());
                             handMask.SetActive(false);
-                            handGrab.ThrowItem(spawnedGarbage);
+                            handGrab.ThrowItem(handGrabbing_Detection.SpawnedGarbage);
+                            handGrabbing_Detection.ResetGrab();
                         }
                         else{
                             handMask.SetActive(false);
-                            hand
                             hitbox.enabled = false;
                             this.enabled = false;
-                            handGrab.AttachMonitor(spawnedGarbage);
+                            handGrab.AttachMonitor(handGrabbing_Detection.SpawnedGarbage);
                         }
                     }
                     break;

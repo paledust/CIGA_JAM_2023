@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 public class PointClick_InteractableHandler : MonoBehaviour
 {
     [SerializeField] private GameObject electrictParticle_obj;
+    [SerializeField] private ParticleSystem booomParticle;
     [SerializeField] private Hand_State hand_state;
-    [SerializeField] private HandMoving handmoving;
+    [SerializeField] private Transform tipTrans;
     [SerializeField] private SpriteRenderer monitorEmission;
 [Header("Cursor")]
     [SerializeField] private Texture2D interactCursorUI;
@@ -17,16 +18,21 @@ public class PointClick_InteractableHandler : MonoBehaviour
     private BasicPointAndClickInteractable hoveringInteractable;
     private BasicPointAndClickInteractable holdingInteractable;
     private IEnumerator coroutineMonitor;
-    public Vector2 MouseScrPos{get; private set;}
+    // public static Vector2 MouseScrPos{get; private set;}
+    public static Vector3 tipPos;
+    private bool isTouching = false;
     void Awake(){
         playerCam = Camera.main;
-        MouseScrPos = new Vector2(Screen.width, Screen.height);
+        // MouseScrPos = new Vector2(Screen.width, Screen.height);
         Cursor.lockState = CursorLockMode.Confined;
+        tipPos = tipTrans.position;
     }
     void Update(){
-        MouseScrPos = Mouse.current.position.ReadValue();
+        tipPos = tipTrans.position;
+        // MouseScrPos = Mouse.current.position.ReadValue();
         if(interactionLock > 0) return;
-        Ray ray = playerCam.ScreenPointToRay(MouseScrPos);
+        Ray ray = playerCam.ScreenPointToRay(playerCam.WorldToScreenPoint(tipTrans.position));
+        Debug.DrawRay(ray.origin, ray.direction, Color.green);
         if(Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, Service.interactableLayer)){
             BasicPointAndClickInteractable hit_Interactable = hit.collider.GetComponent<BasicPointAndClickInteractable>();
             if(hit_Interactable!=null){
@@ -34,7 +40,11 @@ public class PointClick_InteractableHandler : MonoBehaviour
                     if(hoveringInteractable!=null) hoveringInteractable.OnExitHover();
                     hoveringInteractable = hit_Interactable;
                     Cursor.SetCursor(interactCursorUI, Vector2.right*32f, CursorMode.Auto);
-                    hoveringInteractable.OnHover();
+                    hoveringInteractable.OnHover(isTouching);
+                    if(isTouching){
+                        booomParticle.transform.position = tipTrans.position;
+                        booomParticle.Play();
+                    }
                 }
             }
             else{
@@ -70,6 +80,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
         if(value.isPressed){
             hand_state.SwitchHandState("point");
             electrictParticle_obj.SetActive(true);
+            isTouching = true;
             if(coroutineMonitor!=null) StopCoroutine(coroutineMonitor);
             coroutineMonitor = coroutineBlinkMonitor();
             StartCoroutine(coroutineMonitor);
@@ -81,6 +92,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
         else{
             hand_state.SwitchHandState("idle");
             electrictParticle_obj.SetActive(false);
+            isTouching = false;
             if(coroutineMonitor!=null) StopCoroutine(coroutineMonitor);
             coroutineMonitor = coroutineFadeMonitor();
             StartCoroutine(coroutineMonitor);

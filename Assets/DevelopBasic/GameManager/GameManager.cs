@@ -16,7 +16,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private string InitScene;
 [Header("Loading Screen")]
     [SerializeField] private float[] journeyProgress;
-    private int levelIndex;
+    [SerializeField] private string[] journeyName;
+    public int journeyIndex{get; private set;} = 0;
+    public const string loadingScreenScene = "LoadingScreen";
 [Header("Demo")]
     [SerializeField] private bool isDemo = true;
     [SerializeField] private bool isTesting = true;
@@ -56,6 +58,9 @@ public class GameManager : Singleton<GameManager>
             StartCoroutine(SwitchSceneCoroutine(to));
         }
     }
+    public float GetCurrentJourneyProgress(){return journeyProgress[journeyIndex];}
+    public string GetCurrentJourneyName(){return journeyName[journeyIndex];}
+    public void ToNextJourney(){journeyIndex ++;}
 #region Game Pause
     public void PauseTheGame(){
         if(isPaused) return;

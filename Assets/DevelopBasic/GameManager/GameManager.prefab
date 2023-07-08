@@ -129,11 +129,17 @@ MonoBehaviour:
   BlackScreenCanvasGroup: {fileID: 4562222128510109114}
   transitionDuration: 0.5
   loadInitSceneFromGameManager: 0
-  InitScene: Village
+  InitScene: Level_1
   journeyProgress:
+  - 0
   - 0.31
   - 0.65
   - 1
+  journeyName:
+  - Level_1
+  - Level_2
+  - Level_3
+  - Level_4
   isDemo: 0
   isTesting: 1
   demoText: {fileID: 6073298263620526879}

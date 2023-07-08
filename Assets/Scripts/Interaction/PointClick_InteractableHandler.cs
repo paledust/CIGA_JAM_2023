@@ -10,6 +10,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private ParticleSystem booomParticle;
     [SerializeField] private Hand_State hand_state;
     [SerializeField] private Transform tipTrans;
+    [SerializeField] private Transform grabTrans;
     [SerializeField] private SpriteRenderer monitorEmission;
     [SerializeField] private bool canTouch = true;
 [Header("Cursor")]
@@ -17,22 +18,27 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
     [SerializeField, ShowOnly] private int interactionLock = 0;
     private Camera playerCam;
+    private HandMoving handMoving;
     private BasicPointAndClickInteractable hoveringInteractable;
     private BasicPointAndClickInteractable holdingInteractable;
     private IEnumerator coroutineMonitor;
     // public static Vector2 MouseScrPos{get; private set;}
     public static Vector3 tipPos;
+    public static Vector3 grabPos;
     private bool isTouching = false;
     public bool IsTouching{get{return isTouching;}}
     void Awake(){
         playerCam = Camera.main;
         // MouseScrPos = new Vector2(Screen.width, Screen.height);
+        handMoving = GetComponent<HandMoving>();
         Cursor.lockState = cursorLockMode;
         Cursor.visible = false;
         tipPos = tipTrans.position;
+        grabPos= grabTrans.position;
     }
     void Update(){
         tipPos = tipTrans.position;
+        grabPos= grabTrans.position;
         // MouseScrPos = Mouse.current.position.ReadValue();
         if(interactionLock > 0) return;
         Ray ray = playerCam.ScreenPointToRay(playerCam.WorldToScreenPoint(tipTrans.position));
@@ -111,8 +117,12 @@ public class PointClick_InteractableHandler : MonoBehaviour
             }
         }
     }
-    public void GrabStuff(){
+    public void GrabOnToPoint(Vector3 center, float grabRadius){
         hand_state.SwitchHandState("grab");
+        handMoving.EnterGrabMove(center, grabRadius);
+    }
+    public void ReleaseGrab(){
+        handMoving.EnterFreeMove();
     }
     IEnumerator coroutineBlinkMonitor(){
         Color initColor = monitorEmission.color;

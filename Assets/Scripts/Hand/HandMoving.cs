@@ -20,6 +20,8 @@ public class HandMoving : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 resetPosition;
     private Vector3 tipToHandOffset;
+    private Vector3 grabCenter;
+    private float grabRadius;
     void OnEnable(){
         playerCam = Camera.main;
         targetPosition.z = robotTarget_Trans.position.z;
@@ -35,6 +37,15 @@ public class HandMoving : MonoBehaviour
             case HAND_MOVING_STATE.MANUAL:
                 Vector3 mousePos = Mouse.current.position.ReadValue();
                 targetPosition = playerCam.ScreenToWorldPoint(mousePos);
+                targetPosition.z = robotTarget_Trans.position.z;
+                break;
+            case HAND_MOVING_STATE.GRAB_MANUAL:
+                mousePos = Mouse.current.position.ReadValue();
+                mousePos = playerCam.ScreenToWorldPoint(mousePos);
+                mousePos.z = robotTarget_Trans.position.z;
+                Vector3 diff = mousePos - grabCenter;
+
+                targetPosition = grabCenter + diff.normalized*grabRadius;
                 targetPosition.z = robotTarget_Trans.position.z;
                 break;
             case HAND_MOVING_STATE.AUTO_CENTER:
@@ -54,6 +65,14 @@ public class HandMoving : MonoBehaviour
         else{
             sfx_audio.volume = Mathf.Lerp(sfx_audio.volume, 0, Time.deltaTime * 5);
         }
+    }
+    public void EnterGrabMove(Vector3 _grabCenter, float _grabRadius){
+        SwitchHandState(HAND_MOVING_STATE.GRAB_MANUAL);
+        grabCenter = _grabCenter;
+        grabRadius = _grabRadius;
+    }
+    public void EnterFreeMove(){
+        SwitchHandState(HAND_MOVING_STATE.MANUAL);
     }
     public void SwitchHandState(HAND_MOVING_STATE moveState)=>handMoveState = moveState;
 }

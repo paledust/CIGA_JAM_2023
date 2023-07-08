@@ -11,6 +11,7 @@ public class EBoardDrawer : MonoBehaviour
     private LineRenderer currentLine;
     private Vector3 currentDir;
     private Camera mainCam;
+    public bool IsDrawing{get; private set;} = false;
     void Awake(){
         mainCam = Camera.main;
         segment_lengths = new float[segmentPoints.Length-1];
@@ -29,14 +30,21 @@ public class EBoardDrawer : MonoBehaviour
 
         if(currentLine==null) currentLine = GameObject.Instantiate(linePrefab).GetComponent<LineRenderer>();
         else currentLine.positionCount ++;
+
         currentLine.SetPosition(currentLine_Index, drawPoint.transform.position);
         currentLine.SetPosition(currentLine_Index+1, drawPoint.transform.position);
 
         this.enabled = true;
+        IsDrawing = true;
     }
-    public void EndLine(){
+    public void BreakLine(){
         this.enabled = false;
         currentLine.positionCount --;
+        IsDrawing = false;
+    }
+    void FinishLine(){
+        this.enabled = false;
+        IsDrawing = false;
     }
     void Update(){
         Vector3 mousePos = PointClick_InteractableHandler.tipPos;
@@ -49,7 +57,7 @@ public class EBoardDrawer : MonoBehaviour
         if(length >= segment_lengths[currentLine_Index]){
             if(currentLine_Index>=segmentPoints.Length-2){
                 segmentPoints[currentLine_Index].DisableHitbox();
-                EndLine();
+                FinishLine();
             }
             else{
                 segmentPoints[currentLine_Index].DisableHitbox();

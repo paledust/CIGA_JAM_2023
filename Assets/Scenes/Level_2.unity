@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662f63c2b6dd25b479d73055887b7232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction_Type: 0
+  interaction_Type: 1
   hitbox: {fileID: 284763864}
   boardDrawer: {fileID: 1776934937}
 --- !u!1 &519420028
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662f63c2b6dd25b479d73055887b7232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction_Type: 0
+  interaction_Type: 1
   hitbox: {fileID: 1135297815}
   boardDrawer: {fileID: 1776934937}
 --- !u!1 &1193971743
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662f63c2b6dd25b479d73055887b7232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction_Type: 0
+  interaction_Type: 1
   hitbox: {fileID: 1193971746}
   boardDrawer: {fileID: 1776934937}
 --- !u!1 &1203411091
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662f63c2b6dd25b479d73055887b7232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction_Type: 0
+  interaction_Type: 1
   hitbox: {fileID: 1516808096}
   boardDrawer: {fileID: 1776934937}
 --- !u!1 &1776934935

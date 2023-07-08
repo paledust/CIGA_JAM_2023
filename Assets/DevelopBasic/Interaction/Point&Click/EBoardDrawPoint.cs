@@ -5,10 +5,13 @@ using UnityEngine;
 public class EBoardDrawPoint : BasicPointAndClickInteractable
 {
     [SerializeField] private EBoardDrawer boardDrawer;
-    public override void OnHover(bool isTouching)
+    public override void OnHover(bool isTouching, PointClick_InteractableHandler pointclick_handler)
     {
-        base.OnHover(isTouching);
-
+        base.OnHover(isTouching, pointclick_handler);
+        if(isTouching && !boardDrawer.IsDrawing){
+            boardDrawer.StartLine(this);
+            pointclick_handler.HoldTheInteractable(this);
+        }
     }
     public override void OnClick(PointClick_InteractableHandler interactableHandler)
     {
@@ -19,6 +22,6 @@ public class EBoardDrawPoint : BasicPointAndClickInteractable
     public override void OnRelease()
     {
         base.OnRelease();
-        boardDrawer.EndLine();
+        if(boardDrawer.IsDrawing) boardDrawer.BreakLine();
     }
 }

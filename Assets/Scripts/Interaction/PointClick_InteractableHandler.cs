@@ -40,7 +40,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
                     if(hoveringInteractable!=null) hoveringInteractable.OnExitHover();
                     hoveringInteractable = hit_Interactable;
                     Cursor.SetCursor(interactCursorUI, Vector2.right*32f, CursorMode.Auto);
-                    hoveringInteractable.OnHover(isTouching);
+                    hoveringInteractable.OnHover(isTouching, this);
                     if(isTouching){
                         booomParticle.transform.position = tipTrans.position;
                         booomParticle.Play();

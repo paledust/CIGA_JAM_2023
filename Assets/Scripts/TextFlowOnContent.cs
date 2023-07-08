@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class TextFlowOnContent : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private Transform textMesh_trans;
     [SerializeField] private float moveSpeed = 0;
     void OnEnable(){
         EventHandler.E_OnDrawSeveralLines += StartMovement;
         EventHandler.E_OnPickUpMonitor += StartMovement;
+        EventHandler.E_OnGrabCD += FillAndStartMovement;
     }
     void OnDisable(){
         EventHandler.E_OnDrawSeveralLines -= StartMovement;
         EventHandler.E_OnPickUpMonitor -= StartMovement;
+        EventHandler.E_OnGrabCD -= FillAndStartMovement;
+    }
+    void FillAndStartMovement(string content){
+        textMesh.text = content;
+        Vector3 pos = textMesh_trans.localPosition;
+        pos.x = -textMesh.preferredWidth-4;
+        textMesh_trans.localPosition = pos;
+        StartMovement();
     }
     void StartMovement(){
         moveSpeed = 5;
@@ -20,9 +30,9 @@ public class TextFlowOnContent : MonoBehaviour
     void Update()
     {
         textMesh_trans.localPosition += Vector3.right * moveSpeed * Time.deltaTime;
-        if(textMesh_trans.localPosition.x>6){
+        if(textMesh_trans.localPosition.x>4){
             Vector3 pos = textMesh_trans.localPosition;
-            pos.x = -33;
+            pos.x = -textMesh.preferredWidth-4;
             textMesh_trans.localPosition = pos;
         }
     }

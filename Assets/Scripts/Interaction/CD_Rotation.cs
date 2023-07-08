@@ -6,10 +6,12 @@ public class CD_Rotation : BasicPointAndClickInteractable
 {
     [SerializeField, ShowOnly] private CD_STATE cd_state = CD_STATE.IDLE;
     [SerializeField] private SpriteRenderer m_sprite;
+    [SerializeField] private ParticleSystem lightningParticle;
+    [SerializeField] private ParticleSystemForceField particleForceField;
     [SerializeField] private float cd_radius = 4.7f;
     [SerializeField] private float state_transitionTime = 0.25f;
     [SerializeField] private float state_transitionSpeed = 5f;
-    private bool isControlling = false;
+    [SerializeField, ShowOnly] private bool isControlling = false;
     private float angluarSpeed = 0;
     private float transitionTimer = 0;
     private Vector3 grabPoint;
@@ -36,6 +38,8 @@ public class CD_Rotation : BasicPointAndClickInteractable
                             m_sprite.sortingLayerName = "Default";
                             m_sprite.sortingOrder = 0;
                             cd_state = CD_STATE.ROTATING;
+                            if(angluarSpeed>0) particleForceField.rotationSpeed = -2;
+                            else particleForceField.rotationSpeed = 2;
                         }
                     }
                     else{
@@ -44,6 +48,13 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 }
                 break;
             case CD_STATE.ROTATING:
+                if(isControlling){
+                    lightningParticle.transform.position = PointClick_InteractableHandler.tipPos;
+                    if(!lightningParticle.isPlaying)lightningParticle.Play(true);
+                }
+                else{
+                    if(lightningParticle.isPlaying)lightningParticle.Stop(true);
+                }
                 transform.rotation *= Quaternion.Euler(0,0,angluarSpeed*Time.deltaTime);
                 break;
         }
@@ -52,7 +63,21 @@ public class CD_Rotation : BasicPointAndClickInteractable
     {
         base.OnHover(isTouching, interactableHandler);
         if(isTouching){
-            
+            switch(cd_state){
+                case CD_STATE.ROTATING:
+                    isControlling = true;
+                    break;
+            }
+            EventHandler.Call_OnGrabCD("光滑，反光，旋转。");
+        }
+    }
+    public override void OnExitHover()
+    {
+        base.OnExitHover();
+        switch(cd_state){
+            case CD_STATE.ROTATING:
+                isControlling = false;
+                break;
         }
     }
     public override void OnClick(PointClick_InteractableHandler interactableHandler)
@@ -67,8 +92,11 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 isControlling = true;
                 interactableHandler.HoldTheInteractable(this);
                 interactableHandler.GrabOnToPoint(transform.position, cd_radius);
+                EventHandler.Call_OnGrabCD("光滑，反光，旋转。");
                 break;
             case CD_STATE.ROTATING:
+                isControlling = true;
+                interactableHandler.HoldTheInteractable(this);
                 break;
         }
     }
@@ -83,6 +111,8 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 interactableHandler.ReleaseGrab();
                 break;
             case CD_STATE.ROTATING:
+                lightningParticle.Stop(true);
+                isControlling = false;
                 break;
         }
 

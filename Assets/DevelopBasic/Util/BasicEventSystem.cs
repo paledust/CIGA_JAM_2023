@@ -12,6 +12,8 @@ public static class EventHandler
     public static void Call_OnDrawSeveralLines(){E_OnDrawSeveralLines?.Invoke();}
     public static event Action E_OnPickUpMonitor;
     public static void Call_OnPickUpMonitor(){E_OnPickUpMonitor?.Invoke();}
+    public static event Action<string> E_OnGrabCD;
+    public static void Call_OnGrabCD(string CD_Info){E_OnGrabCD?.Invoke(CD_Info);}
 }
 
 //A More Strict Event System

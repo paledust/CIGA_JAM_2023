@@ -11,6 +11,9 @@ public class CD_Rotation : BasicPointAndClickInteractable
     [SerializeField] private float state_transitionTime = 0.25f;
     [SerializeField] private float state_transitionSpeed = 5f;
     [SerializeField, ShowOnly] private bool isControlling = false;
+[Header("Words")]
+    [SerializeField] private string lyrics = "歌词大意：99个气球...在天空...是UFO...来自太空...将军...派出战机...";
+    [SerializeField] private string feels = "光滑，反光，旋转。";
 [Header("Song")]
     [SerializeField] private AudioSource music_good_source;
     [SerializeField] private AudioSource music_bad_source;
@@ -43,6 +46,11 @@ public class CD_Rotation : BasicPointAndClickInteractable
                             m_sprite.sortingLayerName = "Default";
                             m_sprite.sortingOrder = 0;
                             cd_state = CD_STATE.ROTATING;
+                            
+                            if(!music_good_source.isPlaying)music_good_source.Play();
+                            if(!music_bad_source.isPlaying)music_bad_source.Play();
+
+
                             if(angluarSpeed>0) particleForceField.rotationSpeed = -2;
                             else particleForceField.rotationSpeed = 2;
                         }
@@ -58,7 +66,6 @@ public class CD_Rotation : BasicPointAndClickInteractable
                     if(!lightningParticle.isPlaying){
                         lightningParticle.Play(true);
                     }
-                    if(!music_good_source.isPlaying)music_good_source.Play();
                     music_good_source.volume = Mathf.Lerp(music_good_source.volume, 1, Time.deltaTime * 10);
                     music_bad_source.volume = Mathf.Lerp(music_bad_source.volume, 0, Time.deltaTime * 10);
                 }
@@ -66,7 +73,6 @@ public class CD_Rotation : BasicPointAndClickInteractable
                     if(lightningParticle.isPlaying){
                         lightningParticle.Stop(true);
                     }
-                    if(!music_bad_source.isPlaying)music_bad_source.Play();
                     music_bad_source.volume = Mathf.Lerp(music_bad_source.volume, 0.75f, Time.deltaTime * 10);
                     music_good_source.volume = Mathf.Lerp(music_good_source.volume, 0, Time.deltaTime * 10);
                 }
@@ -83,9 +89,9 @@ public class CD_Rotation : BasicPointAndClickInteractable
                     isControlling = true;
                     sfx_source.PlayOneShot(sfx_dj_in);
 
+                    EventHandler.Call_OnFeelWords(lyrics);
                     break;
             }
-            EventHandler.Call_OnGrabCD("99个气球...在天空...是UFO...来自太空...将军...派出战机...");
         }
     }
     public override void OnExitHover()
@@ -112,12 +118,13 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 isControlling = true;
                 interactableHandler.HoldTheInteractable(this);
                 interactableHandler.GrabOnToPoint(transform.position, cd_radius);
-                EventHandler.Call_OnGrabCD("光滑，反光，旋转。");
+                EventHandler.Call_OnFeelWords(feels);
                 break;
             case CD_STATE.ROTATING:
                 isControlling = true;
                 sfx_source.PlayOneShot(sfx_dj_in);
                 interactableHandler.HoldTheInteractable(this);
+                EventHandler.Call_OnFeelWords(lyrics);
                 break;
         }
     }

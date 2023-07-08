@@ -10,12 +10,12 @@ public class TextFlowOnContent : MonoBehaviour
     void OnEnable(){
         EventHandler.E_OnDrawSeveralLines += StartMovement;
         EventHandler.E_OnPickUpMonitor += StartMovement;
-        EventHandler.E_OnGrabCD += FillAndStartMovement;
+        EventHandler.E_OnFeelWords += FillAndStartMovement;
     }
     void OnDisable(){
         EventHandler.E_OnDrawSeveralLines -= StartMovement;
         EventHandler.E_OnPickUpMonitor -= StartMovement;
-        EventHandler.E_OnGrabCD -= FillAndStartMovement;
+        EventHandler.E_OnFeelWords -= FillAndStartMovement;
     }
     void FillAndStartMovement(string content){
         textMesh.text = content;

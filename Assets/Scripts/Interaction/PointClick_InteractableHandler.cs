@@ -81,6 +81,8 @@ public class PointClick_InteractableHandler : MonoBehaviour
             Debug.LogAssertion("InteractableHandler is being locked!!!!");
             return;
         }
+        Cursor.lockState = cursorLockMode;
+        Cursor.visible = false;
         if(!canTouch) return;
 
         if(value.isPressed){
@@ -104,10 +106,13 @@ public class PointClick_InteractableHandler : MonoBehaviour
             StartCoroutine(coroutineMonitor);
 
             if(holdingInteractable != null){
-                holdingInteractable.OnRelease();
+                holdingInteractable.OnRelease(this);
                 holdingInteractable = null;
             }
         }
+    }
+    public void GrabStuff(){
+        hand_state.SwitchHandState("grab");
     }
     IEnumerator coroutineBlinkMonitor(){
         Color initColor = monitorEmission.color;

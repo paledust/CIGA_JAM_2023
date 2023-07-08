@@ -5567,7 +5567,7 @@ MonoBehaviour:
   robotTarget_Trans: {fileID: 6575463942160909168}
   robotHide_Trans: {fileID: 1459700357}
   handMoveState: 0
-  maxVolume: 0.5
+  maxVolume: 0.2
   sfx_audio: {fileID: 6871356349597882185}
   moveClip: {fileID: 8300000, guid: 8561b52890a33c0479b42235d5037d39, type: 3}
   lerpSpeed: 5

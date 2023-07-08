@@ -9,7 +9,7 @@ public class BasicPointAndClickInteractable : MonoBehaviour
     public virtual void OnHover(bool isTouching, PointClick_InteractableHandler pointclick_handler){}
     public virtual void OnExitHover(){}
     public virtual void OnClick(PointClick_InteractableHandler interactableHandler){}
-    public virtual void OnRelease(){}
+    public virtual void OnRelease(PointClick_InteractableHandler interactableHandler){}
     public void DisableHitbox(){hitbox.enabled = false;}
     public void EnableHitbox(){hitbox.enabled = true;}
 }

@@ -23,9 +23,9 @@ public class EBoardDrawPoint : BasicPointAndClickInteractable
         boardDrawer.StartLine(this);
         interactableHandler.HoldTheInteractable(this);
     }
-    public override void OnRelease()
+    public override void OnRelease(PointClick_InteractableHandler interactableHandler)
     {
-        base.OnRelease();
+        base.OnRelease(interactableHandler);
         if(boardDrawer.IsDrawing) boardDrawer.BreakLine();
     }
 }

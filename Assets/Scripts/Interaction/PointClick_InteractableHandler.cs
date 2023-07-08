@@ -11,6 +11,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private Hand_State hand_state;
     [SerializeField] private Transform tipTrans;
     [SerializeField] private SpriteRenderer monitorEmission;
+    [SerializeField] private bool canTouch = true;
 [Header("Cursor")]
     [SerializeField] private Texture2D interactCursorUI;
     [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
@@ -73,11 +74,13 @@ public class PointClick_InteractableHandler : MonoBehaviour
     }
     public void UnlockInteracting()=>interactionLock --;
     public void HoldTheInteractable(BasicPointAndClickInteractable interactable)=>holdingInteractable = interactable;
+    public void AllowTouch(){canTouch = true;}
     void OnInteract(InputValue value){
         if(interactionLock>0){
             Debug.LogAssertion("InteractableHandler is being locked!!!!");
             return;
         }
+        if(!canTouch) return;
 
         if(value.isPressed){
             hand_state.SwitchHandState("point");

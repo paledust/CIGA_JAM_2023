@@ -6,8 +6,14 @@ public class TextFlowOnContent : MonoBehaviour
 {
     [SerializeField] private Transform textMesh_trans;
     [SerializeField] private float moveSpeed = 0;
-    void OnEnable(){EventHandler.E_OnDrawNewLine += StartMovement;}
-    void OnDisable(){EventHandler.E_OnDrawNewLine -= StartMovement;}
+    void OnEnable(){
+        EventHandler.E_OnDrawNewLine += StartMovement;
+        EventHandler.E_OnPickUpMonitor += StartMovement;
+    }
+    void OnDisable(){
+        EventHandler.E_OnDrawNewLine -= StartMovement;
+        EventHandler.E_OnPickUpMonitor -= StartMovement;
+    }
     void StartMovement(){
         moveSpeed = 5;
     }

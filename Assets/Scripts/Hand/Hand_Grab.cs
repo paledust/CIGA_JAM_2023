@@ -51,5 +51,7 @@ public class Hand_Grab : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         handMoving.SwitchHandState(HAND_MOVING_STATE.MANUAL);
+        GetComponent<PointClick_InteractableHandler>().AllowTouch();
+        EventHandler.Call_OnPickUpMonitor();
     }
 }

@@ -2156,6 +2156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203411092}
   - component: {fileID: 1203411093}
+  - component: {fileID: 1203411094}
   m_Layer: 0
   m_Name: Level_Initializer
   m_TagString: Untagged
@@ -2192,6 +2193,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handMoving: {fileID: 6575463941329888459}
   start_Delay: 1
+--- !u!114 &1203411094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203411091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc34db4ed76346440ab89bbcb5b62e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endingDelay: 5
 --- !u!1 &1243343733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,6 +4370,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 838985205}
     m_Modifications:
     - target: {fileID: 6497487122105263456, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: canTouch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497487122105263456, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -4410,6 +4428,10 @@ PrefabInstance:
     - target: {fileID: 6575463941501889718, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976528619911160343, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: m_text
+      value: "\u6309\u4F4F\u9F20\u6807\u53F3\u952E\uFF0C\u7528\u7535\u6D41\u8BFB\u53D6\u4FE1\u606F\u3002"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e2b1af17942a5546a654591f3883819, type: 3}

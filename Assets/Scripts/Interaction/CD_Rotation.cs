@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CD_Rotation : BasicPointAndClickInteractable
 {
     [SerializeField, ShowOnly] private CD_STATE cd_state = CD_STATE.IDLE;
@@ -13,14 +12,14 @@ public class CD_Rotation : BasicPointAndClickInteractable
     [SerializeField] private float state_transitionSpeed = 5f;
     [SerializeField, ShowOnly] private bool isControlling = false;
 [Header("Song")]
-    [SerializeField] private AudioSource music_source;
-    [SerializeField] private AudioClip song;
+    [SerializeField] private AudioSource music_good_source;
+    [SerializeField] private AudioSource music_bad_source;
+    [SerializeField] private AudioSource sfx_source;
+    [SerializeField] private AudioClip sfx_dj_in;
+    [SerializeField] private AudioClip sfx_dj_out;
     private float angluarSpeed = 0;
     private float transitionTimer = 0;
     private Vector3 grabPoint;
-    void Awake(){
-        music_source.clip = song;
-    }
     void Update(){
         switch(cd_state){
             case CD_STATE.IDLE:
@@ -56,13 +55,20 @@ public class CD_Rotation : BasicPointAndClickInteractable
             case CD_STATE.ROTATING:
                 if(isControlling){
                     lightningParticle.transform.position = PointClick_InteractableHandler.tipPos;
-                    if(!lightningParticle.isPlaying)lightningParticle.Play(true);
-                    if(!music_source.isPlaying)music_source.Play();
-                    music_source.volume = Mathf.Lerp(music_source.volume, 1, Time.deltaTime * 10);
+                    if(!lightningParticle.isPlaying){
+                        lightningParticle.Play(true);
+                    }
+                    if(!music_good_source.isPlaying)music_good_source.Play();
+                    music_good_source.volume = Mathf.Lerp(music_good_source.volume, 1, Time.deltaTime * 10);
+                    music_bad_source.volume = Mathf.Lerp(music_bad_source.volume, 0, Time.deltaTime * 10);
                 }
                 else{
-                    if(lightningParticle.isPlaying)lightningParticle.Stop(true);
-                    music_source.volume = Mathf.Lerp(music_source.volume, 0, Time.deltaTime * 10);
+                    if(lightningParticle.isPlaying){
+                        lightningParticle.Stop(true);
+                    }
+                    if(!music_bad_source.isPlaying)music_bad_source.Play();
+                    music_bad_source.volume = Mathf.Lerp(music_bad_source.volume, 0.75f, Time.deltaTime * 10);
+                    music_good_source.volume = Mathf.Lerp(music_good_source.volume, 0, Time.deltaTime * 10);
                 }
                 transform.rotation *= Quaternion.Euler(0,0,angluarSpeed*Time.deltaTime);
                 break;
@@ -75,9 +81,11 @@ public class CD_Rotation : BasicPointAndClickInteractable
             switch(cd_state){
                 case CD_STATE.ROTATING:
                     isControlling = true;
+                    sfx_source.PlayOneShot(sfx_dj_in);
+
                     break;
             }
-            EventHandler.Call_OnGrabCD("光滑，反光，旋转。");
+            EventHandler.Call_OnGrabCD("99个气球...在天空...是UFO...来自太空...将军...派出战机...");
         }
     }
     public override void OnExitHover()
@@ -85,7 +93,10 @@ public class CD_Rotation : BasicPointAndClickInteractable
         base.OnExitHover();
         switch(cd_state){
             case CD_STATE.ROTATING:
-                isControlling = false;
+                if(isControlling){
+                    isControlling = false;
+                    sfx_source.PlayOneShot(sfx_dj_out);
+                }
                 break;
         }
     }
@@ -97,7 +108,7 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 grabPoint = transform.InverseTransformPoint(PointClick_InteractableHandler.grabPos);
 
                 m_sprite.sortingLayerName = "Hand";
-                m_sprite.sortingOrder = 1;
+                m_sprite.sortingOrder = 2;
                 isControlling = true;
                 interactableHandler.HoldTheInteractable(this);
                 interactableHandler.GrabOnToPoint(transform.position, cd_radius);
@@ -105,6 +116,7 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 break;
             case CD_STATE.ROTATING:
                 isControlling = true;
+                sfx_source.PlayOneShot(sfx_dj_in);
                 interactableHandler.HoldTheInteractable(this);
                 break;
         }
@@ -121,7 +133,10 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 break;
             case CD_STATE.ROTATING:
                 lightningParticle.Stop(true);
-                isControlling = false;
+                if(isControlling){
+                    isControlling = false;
+                    sfx_source.PlayOneShot(sfx_dj_out);
+                }
                 break;
         }
 

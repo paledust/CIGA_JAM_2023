@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Level_Initializer : MonoBehaviour
 {
-    [SerializeField] private GameObject handControl_obj;
+    [SerializeField] private HandMoving handMoving;
     [SerializeField] private int start_Delay = 1;
     async void Start(){
         await Task.Delay(start_Delay*1000);
-        handControl_obj.SetActive(true);
+        handMoving.enabled = true;
     }
 }

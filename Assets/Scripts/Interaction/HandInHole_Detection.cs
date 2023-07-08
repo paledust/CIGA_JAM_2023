@@ -24,7 +24,7 @@ public class HandInHole_Detection : MonoBehaviour
                 case HAND_IN_HOLE_STATE.OUT_BOUND:
                     handGrabbing_Detection.gameObject.SetActive(true);
                     handState = HAND_IN_HOLE_STATE.IN_HOLE;
-                    handMoving.lerpSpeed = 1;
+                    handMoving.lerpSpeed = 2;
                     break;
                 case HAND_IN_HOLE_STATE.IN_HOLE:
                     break;

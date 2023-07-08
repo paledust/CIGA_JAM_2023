@@ -11,11 +11,11 @@ public class HandGrabbing_Detection : MonoBehaviour
 [Header("Garbage Spawn")]
     [SerializeField] private GarbageSpawner garbageSpawner;
     [SerializeField] private float garbageSpawnTime = 2f;
-    public bool grabbedMonitor = false;
     public bool Grabbed{get{return handState == HAND_GRAB_STATE.GRAB;}}
     public bool GrabbedMonitor{get{return grabbedMonitor;}}
     public float GarbageSpawnTimer{get; private set;} = 0;
     public Transform SpawnedGarbage{get; private set;}
+    private bool grabbedMonitor = false;
     private Collider2D hitbox;
     void Awake()=>hitbox = GetComponent<Collider2D>();
     void OnEnable(){

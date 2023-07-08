@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3783963339943170077}
   - component: {fileID: 3783963339943170078}
   - component: {fileID: 3783963339943170072}
-  - component: {fileID: 3783963339943170073}
   m_Layer: 0
   m_Name: Mouse Player Control
   m_TagString: Untagged
@@ -78,19 +77,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactCursorUI: {fileID: 2800000, guid: f7a0ff2f7e6195d4bb8301f573c9718f, type: 3}
   interactionLock: 0
---- !u!114 &3783963339943170073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783963339943170076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e5549a62314ce45814f025876dc88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotTarget_Trans: {fileID: 0}
-  robotHide_Trans: {fileID: 0}
-  handMoveState: 0
-  lerpSpeed: 5

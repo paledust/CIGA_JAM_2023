@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Hand_Grab : MonoBehaviour
 {
+    [SerializeField] private Hand_State handState;
     [SerializeField] private HandMoving handMoving;
     [SerializeField] private GameObject thumb_obj;
-    [SerializeField] private SpriteRenderer handRenderer;
-    [SerializeField] private Sprite hand_Front;
-    [SerializeField] private Sprite hand_Grab;
+    [SerializeField] private Transform handTrans;
+
     [SerializeField] private Animation m_anime;
     [SerializeField] private GameObject monitor_obj; 
     private const string throw_anime_name = "Throw";
@@ -19,7 +19,7 @@ public class Hand_Grab : MonoBehaviour
         StartCoroutine(coroutineAttachMonitor(monitor));
     }
     public void GrabItem(Transform grabbedItem){
-        handRenderer.sprite = hand_Grab;
+        handState.SwitchHandState("grab");
         thumb_obj.SetActive(true);
     }
     IEnumerator coroutineAttachMonitor(Transform monitor){
@@ -31,7 +31,7 @@ public class Hand_Grab : MonoBehaviour
         monitor_obj.SetActive(true); 
         Destroy(monitor.gameObject);
 
-        handRenderer.sprite = hand_Front;
+        handState.SwitchHandState("idle");
         thumb_obj.SetActive(false);
         handMoving.lerpSpeed = 5f;
         handMoving.SwitchHandState(HAND_MOVING_STATE.MANUAL);
@@ -44,9 +44,9 @@ public class Hand_Grab : MonoBehaviour
 
         thrownItem.transform.parent = null;
         thrownItem.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
-        thrownItem.GetComponent<ItemFlyAway>().FlyAway(handRenderer.transform.right * 20, -1000);
+        thrownItem.GetComponent<ItemFlyAway>().FlyAway(handTrans.right * 20, -1000);
 
-        handRenderer.sprite = hand_Front;
+        handState.SwitchHandState("idle");
         thumb_obj.SetActive(false);
 
         yield return new WaitForSeconds(0.5f);

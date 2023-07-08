@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class HandMoving : MonoBehaviour
 {
+    [SerializeField] private Transform robotTip_Trans;
+    [SerializeField] private Transform hand_trans;
     [SerializeField] private Transform robotTarget_Trans;
     [SerializeField] private Transform robotHide_Trans;
     [SerializeField, ShowOnly] private HAND_MOVING_STATE handMoveState = HAND_MOVING_STATE.MANUAL;
@@ -13,12 +15,15 @@ public class HandMoving : MonoBehaviour
     public Vector2 positionOffset{get; private set;}
     private Vector3 targetPosition;
     private Vector3 resetPosition;
+    private Vector3 tipToHandOffset;
     void OnEnable(){
         playerCam = Camera.main;
         targetPosition.z = robotTarget_Trans.position.z;
         positionOffset = Vector2.zero;
         resetPosition = playerCam.ViewportToWorldPoint(Vector3.one*0.6f);
         resetPosition.z = robotTarget_Trans.position.z;
+
+        tipToHandOffset = hand_trans.position - robotTip_Trans.position;
     }
     void Update(){
         switch(handMoveState){

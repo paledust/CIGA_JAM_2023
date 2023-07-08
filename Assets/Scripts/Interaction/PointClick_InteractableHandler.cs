@@ -6,13 +6,18 @@ using UnityEngine.InputSystem;
 [AddComponentMenu("Player/PointClick_InteractableHandler")]
 public class PointClick_InteractableHandler : MonoBehaviour
 {
+    [SerializeField] private GameObject electrictParticle_obj;
+    [SerializeField] private Hand_State hand_state;
+    [SerializeField] private HandMoving handmoving;
+    [SerializeField] private SpriteRenderer monitorEmission;
 [Header("Cursor")]
     [SerializeField] private Texture2D interactCursorUI;
     [SerializeField, ShowOnly] private int interactionLock = 0;
     private Camera playerCam;
     private BasicPointAndClickInteractable hoveringInteractable;
     private BasicPointAndClickInteractable holdingInteractable;
-    public static Vector2 MouseScrPos{get; private set;}
+    private IEnumerator coroutineMonitor;
+    public Vector2 MouseScrPos{get; private set;}
     void Awake(){
         playerCam = Camera.main;
         MouseScrPos = new Vector2(Screen.width, Screen.height);
@@ -63,15 +68,47 @@ public class PointClick_InteractableHandler : MonoBehaviour
         }
 
         if(value.isPressed){
+            hand_state.SwitchHandState("point");
+            electrictParticle_obj.SetActive(true);
+            if(coroutineMonitor!=null) StopCoroutine(coroutineMonitor);
+            coroutineMonitor = coroutineBlinkMonitor();
+            StartCoroutine(coroutineMonitor);
+
             if(hoveringInteractable == null) return;
             if(holdingInteractable != null) return;
             hoveringInteractable.OnClick(this);
         }
         else{
+            hand_state.SwitchHandState("idle");
+            electrictParticle_obj.SetActive(false);
+            if(coroutineMonitor!=null) StopCoroutine(coroutineMonitor);
+            coroutineMonitor = coroutineFadeMonitor();
+            StartCoroutine(coroutineMonitor);
+
             if(holdingInteractable != null){
                 holdingInteractable.OnRelease();
                 holdingInteractable = null;
             }
         }
+    }
+    IEnumerator coroutineBlinkMonitor(){
+        Color initColor = monitorEmission.color;
+        Color targetColor = initColor;
+        targetColor.a = 0.25f;
+        for(float t=0; t<1; t+=Time.deltaTime*4){
+            monitorEmission.color = Color.Lerp(initColor, targetColor, EasingFunc.Easing.BounceEaseIn(t));
+            yield return null;
+        }
+        monitorEmission.color = targetColor;
+    }
+    IEnumerator coroutineFadeMonitor(){
+        Color initColor = monitorEmission.color;
+        Color targetColor = initColor;
+        targetColor.a = 0f;
+        for(float t=0; t<1; t+=Time.deltaTime*4){
+            monitorEmission.color = Color.Lerp(initColor, targetColor, EasingFunc.Easing.QuadEaseOut(t));
+            yield return null;
+        }
+        monitorEmission.color = targetColor;
     }
 }

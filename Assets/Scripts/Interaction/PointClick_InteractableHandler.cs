@@ -26,6 +26,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
         playerCam = Camera.main;
         // MouseScrPos = new Vector2(Screen.width, Screen.height);
         Cursor.lockState = cursorLockMode;
+        Cursor.visible = false;
         tipPos = tipTrans.position;
     }
     void Update(){

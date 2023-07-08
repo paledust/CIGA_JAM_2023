@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EBoardDrawer : MonoBehaviour
 {
+    [SerializeField] private Animation m_anime;
     [SerializeField] private EBoardDrawPoint[] segmentPoints;
     [SerializeField] private GameObject linePrefab;
+    [SerializeField] private ParticleSystem boom_particle;
     private float[] segment_lengths;
     private int currentLine_Index = 0;
     private LineRenderer currentLine;
@@ -28,7 +30,10 @@ public class EBoardDrawer : MonoBehaviour
         currentDir = segmentPoints[index+1].transform.position - drawPoint.transform.position;
         currentDir = currentDir.normalized;
 
-        if(currentLine==null) currentLine = GameObject.Instantiate(linePrefab).GetComponent<LineRenderer>();
+        if(currentLine==null){
+            currentLine = GameObject.Instantiate(linePrefab).GetComponent<LineRenderer>();
+            m_anime.Play();
+        }
         else currentLine.positionCount ++;
 
         currentLine.SetPosition(currentLine_Index, drawPoint.transform.position);
@@ -57,10 +62,13 @@ public class EBoardDrawer : MonoBehaviour
         if(length >= segment_lengths[currentLine_Index]){
             if(currentLine_Index>=segmentPoints.Length-2){
                 segmentPoints[currentLine_Index].DisableHitbox();
+                segmentPoints[currentLine_Index+1].HideSprite();
+                boom_particle.Play();
                 FinishLine();
             }
             else{
                 segmentPoints[currentLine_Index].DisableHitbox();
+                segmentPoints[currentLine_Index+1].HideSprite();
                 segmentPoints[currentLine_Index+1].EnableHitbox();
                 StartLine(segmentPoints[currentLine_Index+1]);
             }

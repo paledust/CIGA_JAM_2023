@@ -12,9 +12,15 @@ public class CD_Rotation : BasicPointAndClickInteractable
     [SerializeField] private float state_transitionTime = 0.25f;
     [SerializeField] private float state_transitionSpeed = 5f;
     [SerializeField, ShowOnly] private bool isControlling = false;
+[Header("Song")]
+    [SerializeField] private AudioSource music_source;
+    [SerializeField] private AudioClip song;
     private float angluarSpeed = 0;
     private float transitionTimer = 0;
     private Vector3 grabPoint;
+    void Awake(){
+        music_source.clip = song;
+    }
     void Update(){
         switch(cd_state){
             case CD_STATE.IDLE:
@@ -51,9 +57,12 @@ public class CD_Rotation : BasicPointAndClickInteractable
                 if(isControlling){
                     lightningParticle.transform.position = PointClick_InteractableHandler.tipPos;
                     if(!lightningParticle.isPlaying)lightningParticle.Play(true);
+                    if(!music_source.isPlaying)music_source.Play();
+                    music_source.volume = Mathf.Lerp(music_source.volume, 1, Time.deltaTime * 10);
                 }
                 else{
                     if(lightningParticle.isPlaying)lightningParticle.Stop(true);
+                    music_source.volume = Mathf.Lerp(music_source.volume, 0, Time.deltaTime * 10);
                 }
                 transform.rotation *= Quaternion.Euler(0,0,angluarSpeed*Time.deltaTime);
                 break;

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da7ef804e50b694abf4bd5bd0a081d2, type: 3}
   m_Name: AudioInfo_SO
   m_EditorClassIdentifier: 
-  bgm_info_list: []
+  bgm_info_list:
+  - audio_name: main_song
+    audio_clip: {fileID: 8300000, guid: 916e8a36078e9ef46b84124108bedbd8, type: 3}
   amb_info_list:
   - audio_name: forest
     audio_clip: {fileID: 8300000, guid: 2d801f7ce3e343a4d82c4b3b27ca2898, type: 3}

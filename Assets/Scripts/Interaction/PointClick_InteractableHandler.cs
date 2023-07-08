@@ -13,6 +13,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private SpriteRenderer monitorEmission;
 [Header("Cursor")]
     [SerializeField] private Texture2D interactCursorUI;
+    [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
     [SerializeField, ShowOnly] private int interactionLock = 0;
     private Camera playerCam;
     private BasicPointAndClickInteractable hoveringInteractable;
@@ -24,7 +25,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     void Awake(){
         playerCam = Camera.main;
         // MouseScrPos = new Vector2(Screen.width, Screen.height);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = cursorLockMode;
         tipPos = tipTrans.position;
     }
     void Update(){

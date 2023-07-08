@@ -233,7 +233,7 @@ SphereCollider:
   m_GameObject: {fileID: 81985045}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -347,7 +347,7 @@ SphereCollider:
   m_GameObject: {fileID: 253126477}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -774,7 +774,7 @@ SphereCollider:
   m_GameObject: {fileID: 888263129}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -888,7 +888,7 @@ SphereCollider:
   m_GameObject: {fileID: 962750355}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1034,7 +1034,7 @@ SphereCollider:
   m_GameObject: {fileID: 1129736929}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1308,7 +1308,7 @@ SphereCollider:
   m_GameObject: {fileID: 1221812482}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1506,7 +1506,7 @@ SphereCollider:
   m_GameObject: {fileID: 1397309458}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1674,7 +1674,7 @@ SphereCollider:
   m_GameObject: {fileID: 1725986300}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1788,7 +1788,7 @@ SphereCollider:
   m_GameObject: {fileID: 1771005968}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1976,7 +1976,7 @@ SphereCollider:
   m_GameObject: {fileID: 1790746739}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2090,7 +2090,7 @@ SphereCollider:
   m_GameObject: {fileID: 1842473653}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2288,7 +2288,7 @@ SphereCollider:
   m_GameObject: {fileID: 2034101015}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2402,7 +2402,7 @@ SphereCollider:
   m_GameObject: {fileID: 2040149740}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2413,6 +2413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838985205}
     m_Modifications:
+    - target: {fileID: 6497487122105263456, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: cursorLockMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6575463940629200980, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
       propertyPath: m_Name
       value: Robot_Arm

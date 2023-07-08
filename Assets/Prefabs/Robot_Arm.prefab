@@ -5184,6 +5184,7 @@ GameObject:
   - component: {fileID: 3473965589034427929}
   - component: {fileID: 6497487122105263456}
   - component: {fileID: 6575463940629201003}
+  - component: {fileID: 5739672743730091491}
   m_Layer: 0
   m_Name: Robot_Arm
   m_TagString: Untagged
@@ -5329,6 +5330,7 @@ MonoBehaviour:
   tipTrans: {fileID: 1939602640}
   monitorEmission: {fileID: 8726578033271674905}
   interactCursorUI: {fileID: 2800000, guid: f7a0ff2f7e6195d4bb8301f573c9718f, type: 3}
+  cursorLockMode: 2
   interactionLock: 0
 --- !u!111 &6575463940629201003
 Animation:
@@ -5346,6 +5348,18 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &5739672743730091491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6575463940629200980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288f78b5033db9344996e0277dfd0e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6575463940685981738
 GameObject:
   m_ObjectHideFlags: 0

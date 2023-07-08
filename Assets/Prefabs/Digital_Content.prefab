@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3186051076535447984}
   - component: {fileID: 3186051076535447986}
   - component: {fileID: 3186051076535447987}
+  - component: {fileID: 1817440239}
   m_Layer: 0
   m_Name: Digital_Content
   m_TagString: Untagged
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.7962264, g: 0.99592453, b: 1, a: 0.34117648}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -127,8 +128,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 9
+  m_fontSizeBase: 9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -172,3 +173,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3186051076535447986}
   m_maskType: 0
+--- !u!114 &1817440239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186051076535447985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefc992cb79d07541aa7a453a9ddeb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 4

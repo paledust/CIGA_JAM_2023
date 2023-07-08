@@ -44,3 +44,6 @@ TagManager:
   - name: Hand
     uniqueID: 3691092695
     locked: 0
+  - name: Monitor
+    uniqueID: 3668495877
+    locked: 0

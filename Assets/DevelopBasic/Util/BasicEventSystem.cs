@@ -6,6 +6,8 @@ using UnityEngine;
 //A basic C# Event System
 public static class EventHandler
 {
+    public static event Action E_OnDrawNewLine;
+    public static void Call_OnDrawNewLine(){E_OnDrawNewLine?.Invoke();}
 }
 
 //A More Strict Event System

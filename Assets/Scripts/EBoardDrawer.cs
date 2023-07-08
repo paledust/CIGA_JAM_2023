@@ -40,6 +40,9 @@ public class EBoardDrawer : MonoBehaviour
         currentLine.SetPosition(currentLine_Index+1, drawPoint.transform.position);
 
         this.enabled = true;
+
+        EventHandler.Call_OnDrawNewLine();
+
         IsDrawing = true;
     }
     public void BreakLine(){

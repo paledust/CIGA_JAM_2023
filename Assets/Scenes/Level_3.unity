@@ -587,6 +587,8 @@ MonoBehaviour:
   interaction_Type: 0
   hitbox: {fileID: 1428595586}
   cd_state: 0
+  state_transitionTime: 0.25
+  state_transitionSpeed: 500
 --- !u!4 &1455662239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6575463940629200981, guid: 4e2b1af17942a5546a654591f3883819, type: 3}

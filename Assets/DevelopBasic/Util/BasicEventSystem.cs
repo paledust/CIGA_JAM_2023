@@ -8,6 +8,8 @@ public static class EventHandler
 {
     public static event Action E_OnDrawNewLine;
     public static void Call_OnDrawNewLine(){E_OnDrawNewLine?.Invoke();}
+    public static event Action E_OnDrawSeveralLines;
+    public static void Call_OnDrawSeveralLines(){E_OnDrawSeveralLines?.Invoke();}
     public static event Action E_OnPickUpMonitor;
     public static void Call_OnPickUpMonitor(){E_OnPickUpMonitor?.Invoke();}
 }

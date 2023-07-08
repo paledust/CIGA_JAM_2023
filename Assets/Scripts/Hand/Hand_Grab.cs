@@ -26,7 +26,7 @@ public class Hand_Grab : MonoBehaviour
         handMoving.SwitchHandState(HAND_MOVING_STATE.AUTO_CENTER);
         yield return new WaitForSeconds(1f);
         handMoving.SwitchHandState(HAND_MOVING_STATE.AUTO_HIDE);
-        handMoving.lerpSpeed = 2f;
+        handMoving.lerpSpeed = 1.5f;
         yield return new WaitForSeconds(3f);
         monitor_obj.SetActive(true); 
         Destroy(monitor.gameObject);
@@ -35,6 +35,8 @@ public class Hand_Grab : MonoBehaviour
         thumb_obj.SetActive(false);
         handMoving.lerpSpeed = 5f;
         handMoving.SwitchHandState(HAND_MOVING_STATE.MANUAL);
+        GetComponent<PointClick_InteractableHandler>().AllowTouch();
+        EventHandler.Call_OnPickUpMonitor();
     }
     IEnumerator coroutineThrowItem(Transform thrownItem){
         handMoving.SwitchHandState(HAND_MOVING_STATE.AUTO_CENTER);
@@ -51,7 +53,5 @@ public class Hand_Grab : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         handMoving.SwitchHandState(HAND_MOVING_STATE.MANUAL);
-        GetComponent<PointClick_InteractableHandler>().AllowTouch();
-        EventHandler.Call_OnPickUpMonitor();
     }
 }

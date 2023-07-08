@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0631e717779f15e4d85152f9ab691889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  journey_line: {fileID: 1196100183}
+  drawTime: 2
 --- !u!1 &847176482
 GameObject:
   m_ObjectHideFlags: 0

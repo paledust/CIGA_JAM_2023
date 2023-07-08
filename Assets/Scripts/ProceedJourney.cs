@@ -6,6 +6,7 @@ public class ProceedJourney : MonoBehaviour
 {
     [SerializeField] private LineRenderer journey_line;
     [SerializeField] private float drawTime = 2f;
+    [SerializeField] private float endingDelay = 3f;
     private string progressName = "_Progress";
     void OnEnable(){
         StartCoroutine(coroutineToNextLandMark());
@@ -22,6 +23,7 @@ public class ProceedJourney : MonoBehaviour
             yield return null;
         }
         journey_line.material.SetFloat(progressName, targetProgress);
+        yield return new WaitForSeconds(endingDelay);
         GameManager.Instance.SwitchingScene(GameManager.loadingScreenScene, targetSceneName);
     }
 }

@@ -23,6 +23,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     // public static Vector2 MouseScrPos{get; private set;}
     public static Vector3 tipPos;
     private bool isTouching = false;
+    public bool IsTouching{get{return isTouching;}}
     void Awake(){
         playerCam = Camera.main;
         // MouseScrPos = new Vector2(Screen.width, Screen.height);

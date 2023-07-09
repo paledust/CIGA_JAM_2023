@@ -18,6 +18,10 @@ public static class EventHandler
     public static void Call_OnCDPlaying(){E_OnCDPlaying?.Invoke();}
     public static event Action E_OnFinishDrawLine;
     public static void Call_OnFinishDrawLine(){E_OnFinishDrawLine?.Invoke();}
+    public static event Action E_OnQuestionAsked;
+    public static void Call_OnQuestionAsked(){E_OnQuestionAsked?.Invoke();}
+    public static event Action E_OnHandShake;
+    public static void Call_OnHandShake(){E_OnHandShake?.Invoke();}
 }
 
 //A More Strict Event System

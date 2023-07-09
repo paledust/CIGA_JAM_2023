@@ -11,11 +11,13 @@ public class TextFlowOnContent : MonoBehaviour
         EventHandler.E_OnDrawSeveralLines += StartMovement;
         EventHandler.E_OnPickUpMonitor += StartMovement;
         EventHandler.E_OnFeelWords += FillAndStartMovement;
+        EventHandler.E_OnHandShake += CrazyMovement;
     }
     void OnDisable(){
         EventHandler.E_OnDrawSeveralLines -= StartMovement;
         EventHandler.E_OnPickUpMonitor -= StartMovement;
         EventHandler.E_OnFeelWords -= FillAndStartMovement;
+        EventHandler.E_OnHandShake -= CrazyMovement;
     }
     void FillAndStartMovement(string content){
         textMesh.text = content;
@@ -26,6 +28,9 @@ public class TextFlowOnContent : MonoBehaviour
     }
     void StartMovement(){
         moveSpeed = 5;
+    }
+    void CrazyMovement(){
+        moveSpeed = 40;
     }
     void Update()
     {

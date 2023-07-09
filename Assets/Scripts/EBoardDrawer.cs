@@ -53,6 +53,7 @@ public class EBoardDrawer : MonoBehaviour
     void FinishLine(){
         this.enabled = false;
         IsDrawing = false;
+        EventHandler.Call_OnFinishDrawLine();
     }
     void Update(){
         Vector3 mousePos = PointClick_InteractableHandler.tipPos;

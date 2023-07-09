@@ -9,8 +9,12 @@ public class MushroomManager : MonoBehaviour
     [SerializeField] private float growCycle = 2;
     private int growIndex = 0;
     private float nextGrowTimer;
-    void Awake()=>EventHandler.E_OnCDPlaying+=WakeUpMushroomCycle;
-    void OnDestroy()=>EventHandler.E_OnCDPlaying-=WakeUpMushroomCycle;
+    void Awake(){
+        EventHandler.E_OnCDPlaying+=WakeUpMushroomCycle;
+    }
+    void OnDestroy(){
+        EventHandler.E_OnCDPlaying-=WakeUpMushroomCycle;
+    }
     void WakeUpMushroomCycle(){
         nextGrowTimer = Time.time;
         this.enabled = true;

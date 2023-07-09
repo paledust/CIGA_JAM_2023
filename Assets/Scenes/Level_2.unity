@@ -1587,6 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle_Prefab: {fileID: 3186051076535447985, guid: b7f2352f819acd6439d6781065f5e306, type: 3}
   spawnHeight: 7.22
+  spawnStep: 0
   spawnText:
   - 1101000
   - 1100
@@ -1607,6 +1608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203411092}
   - component: {fileID: 1203411093}
+  - component: {fileID: 1203411094}
   m_Layer: 0
   m_Name: Level_Initializer
   m_TagString: Untagged
@@ -1643,6 +1645,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handMoving: {fileID: 6575463941329888459}
   start_Delay: 1
+--- !u!114 &1203411094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203411091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5820a70e804eb524388bb2344e5faf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 3
 --- !u!1 &1378236099
 GameObject:
   m_ObjectHideFlags: 0

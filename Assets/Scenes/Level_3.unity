@@ -162,7 +162,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6E7F\u6ED1\uFF0C\u67D4\u8F6F"
 --- !u!135 &22003363
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -376,7 +377,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -441,6 +442,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u575A\u786C\uFF0C\u7C98\u8FDE"
 --- !u!135 &198540680
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -508,7 +510,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -558,6 +560,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u53D1\u5149\uFF0C\u6BDB\u8338\u8338\uFF0C\u7164\u6C14\u5473"
 --- !u!135 &283212896
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1000,7 +1003,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1050,6 +1053,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6709\u523A\uFF01\uFF01\uFF01"
 --- !u!135 &693625481
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1117,7 +1121,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1167,6 +1171,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6E7F\u6ED1\uFF0C\u67D4\u8F6F"
 --- !u!135 &705107711
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1303,7 +1308,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1368,6 +1373,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6E7F\u6ED1\uFF0C\u67D4\u8F6F"
 --- !u!135 &740107237
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1435,7 +1441,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1485,6 +1491,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6709\u523A\uFF01\uFF01\uFF01"
 --- !u!135 &759333963
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1609,7 +1616,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1674,6 +1681,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6709\u523A\uFF01\uFF01\uFF01"
 --- !u!135 &947991679
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1758,7 +1766,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1823,6 +1831,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u53D1\u5149\uFF0C\u6BDB\u8338\u8338\uFF0C\u7164\u6C14\u5473"
 --- !u!135 &986100815
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1875,7 +1884,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1940,6 +1949,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6E7F\u6ED1\uFF0C\u67D4\u8F6F"
 --- !u!135 &1022792203
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1992,7 +2002,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2057,6 +2067,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u8F6F\u7EF5\u7EF5\uFF0C\u591A\u8DB3\u3002\u626D\u52A8\uFF0C\u6B63\u5728\u4EAB\u53D7\u97F3\u4E50"
 --- !u!65 &1039740254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2124,7 +2135,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2174,6 +2185,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u53D1\u5149\uFF0C\u6BDB\u8338\u8338\uFF0C\u7164\u6C14\u5473"
 --- !u!135 &1041676059
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7167,7 +7179,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7232,6 +7244,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u5E72\u762A\uFF0C\u67D4\u8F6F\uFF0C\u5377\u66F2\u3002"
 --- !u!135 &1145491126
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7299,7 +7312,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7349,6 +7362,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6E7F\u6ED1\uFF0C\u67D4\u8F6F"
 --- !u!135 &1157604102
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7372,8 +7386,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1203411092}
   - component: {fileID: 1203411093}
+  - component: {fileID: 1203411094}
+  - component: {fileID: 1203411095}
   m_Layer: 0
-  m_Name: Level_Initializer
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7408,6 +7424,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handMoving: {fileID: 6575463941329888459}
   start_Delay: 1
+--- !u!114 &1203411094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203411091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671d08982c3b2834b8bf95fc23888686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner_obj: {fileID: 1843907200}
+--- !u!114 &1203411095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203411091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fda0beb0299b904f89bd98f409a060b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 38
 --- !u!1 &1294508336
 GameObject:
   m_ObjectHideFlags: 0
@@ -13372,6 +13414,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1843907200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843907202}
+  - component: {fileID: 1843907201}
+  m_Layer: 0
+  m_Name: SubtitleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1843907201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843907200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a208f0208032c7e4ba001044b52f05bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitle_Prefab: {fileID: 3186051076535447985, guid: 799422be44f4f81468500cafceb25a63, type: 3}
+  spawnHeight: 7.22
+  spawnStep: 0.5
+  spawnText: []
+--- !u!4 &1843907202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843907200}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70710653, w: 0.7071071}
+  m_LocalPosition: {x: -0.7, y: -6.21, z: -1.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1947756393
 GameObject:
   m_ObjectHideFlags: 0
@@ -13426,7 +13516,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13476,6 +13566,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6B63\u5728\u4EAB\u53D7\u97F3\u4E50"
 --- !u!135 &1947756397
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13528,7 +13619,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13593,6 +13684,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u6709\u523A\uFF01\uFF01\uFF01"
 --- !u!135 &1965608981
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13645,7 +13737,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13710,6 +13802,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u5E72\u762A\uFF0C\u67D4\u8F6F\uFF0C\u5377\u66F2\u3002"
 --- !u!135 &2002597495
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13811,7 +13904,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bcc09f2f3fa19f540847c8891270a5f2, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13876,6 +13969,7 @@ MonoBehaviour:
   growShakeAngle: 50
   growShakeFreq: 15
   growShakeOffset: 0.2
+  mushroomWords: "\u5E72\u762A\uFF0C\u67D4\u8F6F\uFF0C\u5377\u66F2\u3002"
 --- !u!135 &2101740061
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13930,6 +14024,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838985205}
     m_Modifications:
+    - target: {fileID: 1658207714, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658207714, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658207714, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -603874601
+      objectReference: {fileID: 0}
     - target: {fileID: 5739672743730091491, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
       propertyPath: m_Enabled
       value: 1

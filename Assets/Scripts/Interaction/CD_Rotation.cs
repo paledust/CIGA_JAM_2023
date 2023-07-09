@@ -52,7 +52,6 @@ public class CD_Rotation : BasicPointAndClickInteractable
                             if(!music_good_source.isPlaying)music_good_source.Play();
                             if(!music_bad_source.isPlaying)music_bad_source.Play();
 
-
                             if(angluarSpeed>0) particleForceField.rotationSpeed = -2;
                             else particleForceField.rotationSpeed = 2;
                         }

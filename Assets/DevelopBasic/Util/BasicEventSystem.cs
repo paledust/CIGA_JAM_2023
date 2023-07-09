@@ -16,6 +16,8 @@ public static class EventHandler
     public static void Call_OnFeelWords(string fellContent){E_OnFeelWords?.Invoke(fellContent);}
     public static event Action E_OnCDPlaying;
     public static void Call_OnCDPlaying(){E_OnCDPlaying?.Invoke();}
+    public static event Action E_OnFinishDrawLine;
+    public static void Call_OnFinishDrawLine(){E_OnFinishDrawLine?.Invoke();}
 }
 
 //A More Strict Event System

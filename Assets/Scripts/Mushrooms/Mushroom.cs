@@ -8,8 +8,10 @@ public class Mushroom : BasicPointAndClickInteractable
     [SerializeField] private float growShakeAngle = 5f;
     [SerializeField] private float growShakeFreq = 10f;
     [SerializeField] private float growShakeOffset = 0.2f;
+    [SerializeField] private string mushroomWords;
     private SpriteRenderer m_sprite;
     private float originalScale;
+    private bool shaking = false;
     public void ShrinkToZero(){
         DisableHitbox();
         m_sprite = GetComponent<SpriteRenderer>();
@@ -17,8 +19,31 @@ public class Mushroom : BasicPointAndClickInteractable
         transform.localScale = Vector3.zero;
         transform.position -= transform.up*growShakeOffset;
     }
-    [ContextMenu("Grow")]
+    void Update(){
+
+    }
     public void Grow()=>StartCoroutine(coroutineGrow());
+    public override void OnHover(bool isTouching, PointClick_InteractableHandler pointclick_handler){
+        base.OnHover(isTouching, pointclick_handler);
+        if(isTouching){
+            if(!shaking) StartCoroutine(coroutineBoin());
+            EventHandler.Call_OnFeelWords(mushroomWords);
+        }
+    }
+    IEnumerator coroutineBoin(){
+        shaking = true;
+        float expandScale = 1.1f;
+        for(float t=0; t<1; t+=Time.deltaTime*5f){
+            transform.localScale = Vector3.Lerp(Vector3.one*originalScale, Vector3.one*originalScale*expandScale, EasingFunc.Easing.QuadEaseOut(t));
+            yield return null;
+        }
+        for(float t=0; t<1; t+=Time.deltaTime*2f){
+            transform.localScale = Vector3.Lerp(Vector3.one*originalScale*expandScale, Vector3.one*originalScale, EasingFunc.Easing.BounceEaseOut(t));
+            yield return null;
+        }
+        transform.localScale = Vector3.one * originalScale;
+        shaking = false;
+    }
     IEnumerator coroutineGrow(){
         float growSpeed = 1f/growSec;
         float initRot = transform.localEulerAngles.z;

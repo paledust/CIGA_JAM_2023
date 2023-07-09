@@ -13,6 +13,9 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private Transform grabTrans;
     [SerializeField] private SpriteRenderer monitorEmission;
     [SerializeField] private bool canTouch = true;
+[Header("Audio")]
+    [SerializeField] private AudioSource m_audio;
+    [SerializeField] private AudioClip swichClip;
 [Header("Cursor")]
     [SerializeField] private Texture2D interactCursorUI;
     [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
@@ -91,7 +94,11 @@ public class PointClick_InteractableHandler : MonoBehaviour
         Cursor.visible = false;
         if(!canTouch) return;
 
+        m_audio.PlayOneShot(swichClip);
+
         if(value.isPressed){
+            m_audio.Play();
+
             hand_state.SwitchHandState("point");
             electrictParticle_obj.SetActive(true);
             isTouching = true;
@@ -104,6 +111,8 @@ public class PointClick_InteractableHandler : MonoBehaviour
             hoveringInteractable.OnClick(this);
         }
         else{
+            m_audio.Stop();
+
             hand_state.SwitchHandState("idle");
             electrictParticle_obj.SetActive(false);
             isTouching = false;

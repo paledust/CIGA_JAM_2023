@@ -8,6 +8,8 @@ public class EBoardDrawer : MonoBehaviour
     [SerializeField] private EBoardDrawPoint[] segmentPoints;
     [SerializeField] private GameObject linePrefab;
     [SerializeField] private ParticleSystem boom_particle;
+[Header("Audio")]
+    [SerializeField] private AudioSource m_audio;
     private float[] segment_lengths;
     private int currentLine_Index = 0;
     private LineRenderer currentLine;
@@ -44,16 +46,24 @@ public class EBoardDrawer : MonoBehaviour
         EventHandler.Call_OnDrawNewLine();
 
         IsDrawing = true;
+        if(!m_audio.isPlaying)m_audio.Play();
+
+        StopAllCoroutines();
+        StartCoroutine(CoroutinePulseVolume());
     }
     public void BreakLine(){
         this.enabled = false;
         currentLine.positionCount --;
         IsDrawing = false;
+
+        m_audio.Stop();
     }
     void FinishLine(){
         this.enabled = false;
         IsDrawing = false;
         EventHandler.Call_OnFinishDrawLine();
+
+        m_audio.Stop();
     }
     void Update(){
         Vector3 mousePos = PointClick_InteractableHandler.tipPos;
@@ -77,5 +87,13 @@ public class EBoardDrawer : MonoBehaviour
                 StartLine(segmentPoints[currentLine_Index+1]);
             }
         }
+    }
+    IEnumerator CoroutinePulseVolume(){
+        m_audio.volume = 1;
+        for(float t=0; t<1; t+=Time.deltaTime*4){
+            m_audio.volume = Mathf.Lerp(1, 0.3f, EasingFunc.Easing.QuadEaseIn(t));
+            yield return null;
+        }
+        m_audio.volume = 0.3f;
     }
 }

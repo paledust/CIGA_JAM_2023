@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicPointAndClickInteractable : MonoBehaviour
 {
     public INTERACTION_TYPE interaction_Type;
-    [SerializeField] private Collider hitbox;
+    [SerializeField] protected Collider hitbox;
     public virtual void OnHover(bool isTouching, PointClick_InteractableHandler pointclick_handler){}
     public virtual void OnExitHover(){}
     public virtual void OnClick(PointClick_InteractableHandler interactableHandler){}

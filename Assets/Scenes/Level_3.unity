@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 22003361}
   - component: {fileID: 22003360}
   - component: {fileID: 22003362}
-  m_Layer: 0
+  - component: {fileID: 22003363}
+  m_Layer: 6
   m_Name: "\u4E0D\u77E5\u9053\u4EC0\u4E48\u9B3C_0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,6 +221,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 22003363}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &22003363
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22003359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.03
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &156795974
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +303,8 @@ MonoBehaviour:
   - {fileID: 1157604101}
   - {fileID: 705107710}
   - {fileID: 759333962}
+  delayRange: {x: 0.2, y: 0.5}
+  growCycle: 2
 --- !u!1 &165427438
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +348,8 @@ GameObject:
   - component: {fileID: 198540678}
   - component: {fileID: 198540677}
   - component: {fileID: 198540679}
-  m_Layer: 0
+  - component: {fileID: 198540680}
+  m_Layer: 6
   m_Name: "\u9E21\u5C45\u7F51"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,6 +435,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 198540680}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &198540680
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198540676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6.5400014
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &283212892
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +465,8 @@ GameObject:
   - component: {fileID: 283212893}
   - component: {fileID: 283212894}
   - component: {fileID: 283212895}
-  m_Layer: 0
+  - component: {fileID: 283212896}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_0 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,6 +552,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 283212896}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &283212896
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283212892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6849995
+  m_Center: {x: -0.7473324, y: 2.3963041, z: 0}
 --- !u!1 &355785795
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +957,8 @@ GameObject:
   - component: {fileID: 693625478}
   - component: {fileID: 693625479}
   - component: {fileID: 693625480}
-  m_Layer: 0
+  - component: {fileID: 693625481}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_2 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,6 +1044,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 693625481}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &693625481
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693625477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.5804698
+  m_Center: {x: -0.077310815, y: 1.2110355, z: 0}
 --- !u!1 &705107707
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +1074,8 @@ GameObject:
   - component: {fileID: 705107708}
   - component: {fileID: 705107709}
   - component: {fileID: 705107710}
-  m_Layer: 0
+  - component: {fileID: 705107711}
+  m_Layer: 6
   m_Name: "\u4E0D\u77E5\u9053\u4EC0\u4E48\u9B3C_1 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,6 +1161,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 705107711}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &705107711
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705107707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6754813
+  m_Center: {x: -1.2111957, y: 2.1128716, z: 0}
 --- !u!1 &710405037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1275,8 @@ GameObject:
   - component: {fileID: 740107235}
   - component: {fileID: 740107234}
   - component: {fileID: 740107236}
-  m_Layer: 0
+  - component: {fileID: 740107237}
+  m_Layer: 6
   m_Name: "\u4E0D\u77E5\u9053\u4EC0\u4E48\u9B3C_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,6 +1362,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 740107237}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &740107237
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740107233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6754818
+  m_Center: {x: 1.2111957, y: 2.112872, z: 0}
 --- !u!1 &759333959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1392,8 @@ GameObject:
   - component: {fileID: 759333960}
   - component: {fileID: 759333961}
   - component: {fileID: 759333962}
-  m_Layer: 0
+  - component: {fileID: 759333963}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_4 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,6 +1479,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 759333963}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &759333963
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759333959}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.520461
+  m_Center: {x: -0.02577138, y: 1.3141026, z: 0}
 --- !u!1 &838985204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1581,8 @@ GameObject:
   - component: {fileID: 947991677}
   - component: {fileID: 947991676}
   - component: {fileID: 947991678}
-  m_Layer: 0
+  - component: {fileID: 947991679}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,6 +1668,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 947991679}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &947991679
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947991675}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.335
+  m_Center: {x: 2.2162285, y: 2.1901712, z: 0}
 --- !u!1 &973057431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,7 +1730,8 @@ GameObject:
   - component: {fileID: 986100813}
   - component: {fileID: 986100812}
   - component: {fileID: 986100814}
-  m_Layer: 0
+  - component: {fileID: 986100815}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,6 +1817,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 986100815}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &986100815
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986100811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.685
+  m_Center: {x: -0.7473325, y: 2.3963044, z: 0}
 --- !u!1 &1022792199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1847,8 @@ GameObject:
   - component: {fileID: 1022792201}
   - component: {fileID: 1022792200}
   - component: {fileID: 1022792202}
-  m_Layer: 0
+  - component: {fileID: 1022792203}
+  m_Layer: 6
   m_Name: "\u4E0D\u77E5\u9053\u4EC0\u4E48\u9B3C_3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,6 +1934,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1022792203}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1022792203
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022792199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.9805214
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1039740250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1964,8 @@ GameObject:
   - component: {fileID: 1039740252}
   - component: {fileID: 1039740251}
   - component: {fileID: 1039740253}
-  m_Layer: 0
+  - component: {fileID: 1039740254}
+  m_Layer: 6
   m_Name: "\u4E0D\u77E5\u9053\u4EC0\u4E48\u9B3C_4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,6 +2051,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1039740254}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!65 &1039740254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039740250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.32, y: 3.1, z: 0.2}
+  m_Center: {x: 0.025770186, y: -0.25766703, z: 0}
 --- !u!1 &1041676055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +2081,8 @@ GameObject:
   - component: {fileID: 1041676056}
   - component: {fileID: 1041676057}
   - component: {fileID: 1041676058}
-  m_Layer: 0
+  - component: {fileID: 1041676059}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_0 (2)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1945,6 +2168,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1041676059}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1041676059
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041676055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6849995
+  m_Center: {x: -0.74733245, y: 2.3963041, z: 0}
 --- !u!1 &1053826705
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,7 +7139,8 @@ GameObject:
   - component: {fileID: 1145491124}
   - component: {fileID: 1145491123}
   - component: {fileID: 1145491125}
-  m_Layer: 0
+  - component: {fileID: 1145491126}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6983,6 +7226,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1145491126}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1145491126
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145491122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.5804687
+  m_Center: {x: -0.07731079, y: 1.2110351, z: 0}
 --- !u!1 &1157604098
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +7256,8 @@ GameObject:
   - component: {fileID: 1157604099}
   - component: {fileID: 1157604100}
   - component: {fileID: 1157604101}
-  m_Layer: 0
+  - component: {fileID: 1157604102}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_1 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7080,6 +7343,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1157604102}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1157604102
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157604098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.8999999
+  m_Center: {x: -0.6700225, y: 1.1595023, z: 0}
 --- !u!1 &1203411091
 GameObject:
   m_ObjectHideFlags: 0
@@ -7411,10 +7693,12 @@ MonoBehaviour:
   m_sprite: {fileID: 1428595584}
   lightningParticle: {fileID: 1476194887}
   particleForceField: {fileID: 1753775088}
-  cd_radius: 3
+  cd_radius: 3.5
   state_transitionTime: 0.25
   state_transitionSpeed: 350
   isControlling: 0
+  lyrics: "\u6B4C\u8BCD\u5927\u610F\uFF1A99\u4E2A\u6C14\u7403...\u5728\u5929\u7A7A...\u662FUFO...\u6765\u81EA\u592A\u7A7A...\u5C06\u519B...\u6D3E\u51FA\u6218\u673A..."
+  feels: "\u5149\u6ED1\uFF0C\u53CD\u5149\uFF0C\u65CB\u8F6C\u3002"
   music_good_source: {fileID: 1053826707}
   music_bad_source: {fileID: 355785797}
   sfx_source: {fileID: 1699623632}
@@ -13099,7 +13383,8 @@ GameObject:
   - component: {fileID: 1947756394}
   - component: {fileID: 1947756395}
   - component: {fileID: 1947756396}
-  m_Layer: 0
+  - component: {fileID: 1947756397}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_5 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13185,6 +13470,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1947756397}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1947756397
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947756393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.8053672
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1965608977
 GameObject:
   m_ObjectHideFlags: 0
@@ -13196,7 +13500,8 @@ GameObject:
   - component: {fileID: 1965608979}
   - component: {fileID: 1965608978}
   - component: {fileID: 1965608980}
-  m_Layer: 0
+  - component: {fileID: 1965608981}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13282,6 +13587,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 1965608981}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &1965608981
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965608977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.8053675
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2002597491
 GameObject:
   m_ObjectHideFlags: 0
@@ -13293,7 +13617,8 @@ GameObject:
   - component: {fileID: 2002597493}
   - component: {fileID: 2002597492}
   - component: {fileID: 2002597494}
-  m_Layer: 0
+  - component: {fileID: 2002597495}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13379,6 +13704,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 2002597495}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &2002597495
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002597491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.9000006
+  m_Center: {x: -0.67002267, y: 1.1595025, z: 0}
 --- !u!1 &2033538163
 GameObject:
   m_ObjectHideFlags: 0
@@ -13439,7 +13783,8 @@ GameObject:
   - component: {fileID: 2101740059}
   - component: {fileID: 2101740058}
   - component: {fileID: 2101740060}
-  m_Layer: 0
+  - component: {fileID: 2101740061}
+  m_Layer: 6
   m_Name: "\u83C7\u7C7B_4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13525,6 +13870,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d7a4b01ed2f4f948615d07cf1711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction_Type: 0
+  hitbox: {fileID: 2101740061}
+  growSec: 0.7
+  growShakeAngle: 50
+  growShakeFreq: 15
+  growShakeOffset: 0.2
+--- !u!135 &2101740061
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101740057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.520461
+  m_Center: {x: -0.02577138, y: 1.3141026, z: 0}
 --- !u!1 &2125657819
 GameObject:
   m_ObjectHideFlags: 0

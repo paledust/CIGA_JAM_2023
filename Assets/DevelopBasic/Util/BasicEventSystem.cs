@@ -13,7 +13,9 @@ public static class EventHandler
     public static event Action E_OnPickUpMonitor;
     public static void Call_OnPickUpMonitor(){E_OnPickUpMonitor?.Invoke();}
     public static event Action<string> E_OnFeelWords;
-    public static void Call_OnFeelWords(string CD_Info){E_OnFeelWords?.Invoke(CD_Info);}
+    public static void Call_OnFeelWords(string fellContent){E_OnFeelWords?.Invoke(fellContent);}
+    public static event Action E_OnCDPlaying;
+    public static void Call_OnCDPlaying(){E_OnCDPlaying?.Invoke();}
 }
 
 //A More Strict Event System

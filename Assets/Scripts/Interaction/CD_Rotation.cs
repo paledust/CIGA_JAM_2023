@@ -47,6 +47,8 @@ public class CD_Rotation : BasicPointAndClickInteractable
                             m_sprite.sortingOrder = 0;
                             cd_state = CD_STATE.ROTATING;
                             
+                            EventHandler.Call_OnCDPlaying();
+
                             if(!music_good_source.isPlaying)music_good_source.Play();
                             if(!music_bad_source.isPlaying)music_bad_source.Play();
 

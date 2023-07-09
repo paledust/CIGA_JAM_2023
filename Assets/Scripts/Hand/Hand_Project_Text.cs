@@ -9,7 +9,7 @@ public class Hand_Project_Text : MonoBehaviour
     [SerializeField] private Transform tipTrans;
     [SerializeField] private float spreadAngle = 10;
     [SerializeField] private float projectStep;
-    private bool isProjecting = false;
+    public bool isProjecting{get; private set;} = false;
     private float projectTime;
     void FixedUpdate(){
         if(isProjecting) {
@@ -19,13 +19,17 @@ public class Hand_Project_Text : MonoBehaviour
                 projectTime = Time.time;
             }
         }
-
     }
     void OnInteract(InputValue value){
+        if(!this.enabled) return;
         if(value.isPressed){
             projectTime = Time.time;
             isProjecting = true;
         }
         else isProjecting = false;
+    }
+    public void StopProject(){
+        isProjecting = false;
+        this.enabled = false;
     }
 }

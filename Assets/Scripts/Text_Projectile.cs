@@ -13,8 +13,8 @@ public class Text_Projectile : MonoBehaviour
     private float existence;
     public void OnProject(Vector3 pos, Vector3 dir){
         transform.position = pos;
-        velocity = dir * 10;
-        angularSpeed = Random.Range(2500,3000);
+        velocity = dir * 20;
+        angularSpeed = Random.Range(1500,2000);
         tm.text = Libiry[Random.Range(0, Libiry.Length)].ToString();
         gameObject.SetActive(true);
     }

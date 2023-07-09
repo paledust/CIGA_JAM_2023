@@ -21,6 +21,21 @@ public class Hand_Shaking : MonoBehaviour
         handTrans.localRotation = Quaternion.Euler(0,0,Mathf.Sin(timer*Mathf.PI)*shakeAmp);
     }
     void KickInHandShake()=>StartCoroutine(coroutineFadeInShaking());
+    public void StopShake(){
+        StartCoroutine(coroutineFadeOutShaking());
+    }
+    IEnumerator coroutineFadeOutShaking(){
+        yield return new WaitForSeconds(delay);
+        for(float t=0; t<1; t+=Time.deltaTime*2f){
+            float _t = EasingFunc.Easing.QuadEaseOut(t);
+            shakeFreq = Mathf.Lerp(maxShakeFreq, 0, _t);
+            shakeAmp  = Mathf.Lerp(maxShakeAmp, 0, _t);
+            yield return null;
+        }
+        shakeAmp = 0;
+        shakeFreq = 0;   
+        this.enabled = false;
+    }
     IEnumerator coroutineFadeInShaking(){
         this.enabled = true;
         yield return new WaitForSeconds(delay);

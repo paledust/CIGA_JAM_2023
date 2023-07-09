@@ -5794,7 +5794,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6575463940629200980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02df404907c2e3941bbee66886040496, type: 3}
   m_Name: 
@@ -5802,7 +5802,7 @@ MonoBehaviour:
   textProjectilePrefab: {fileID: 8479384825273956033, guid: 58fa42bbfd90d7043a18c1ad01d95c2e, type: 3}
   tipTrans: {fileID: 1939602640}
   spreadAngle: 20
-  projectStep: 0.025
+  projectStep: 0.05
 --- !u!1 &6575463940685981738
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class TouchQuestions : BasicPointAndClickInteractable
             tm.text = content[index];
             if(index>=TyrTime.Length){
                 DisableHitbox();
-                transform.position = Vector3.up * 2.5f;
+                transform.position = Vector3.up * 4f;
                 tm.fontSize = 11.5f;
                 EventHandler.Call_OnQuestionAsked();
                 Destroy(this);

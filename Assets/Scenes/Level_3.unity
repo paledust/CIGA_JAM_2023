@@ -14104,6 +14104,10 @@ PrefabInstance:
       propertyPath: m_MaskInteraction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6976528619911160343, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8726578033271674905, guid: 4e2b1af17942a5546a654591f3883819, type: 3}
       propertyPath: m_Color.b
       value: 0.6636905

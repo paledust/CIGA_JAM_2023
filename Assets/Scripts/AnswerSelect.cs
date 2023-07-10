@@ -9,7 +9,7 @@ public class AnswerSelect : BasicPointAndClickInteractable
     private bool selected = false;
     private float timer;
     private Vector3 normalScale;
-    private Vector3 center;
+    private Vector3 center = Vector3.up*-0.25f;
     public void Initiate(){
         initialPosition = transform.position;
         normalScale = transform.localScale;
@@ -58,8 +58,8 @@ public class AnswerSelect : BasicPointAndClickInteractable
             }
         }
 
-        transform.localScale = Vector3.Lerp(normalScale, normalScale*5, EasingFunc.Easing.QuadEaseOut(timer/selectTime));
-        transform.position   = Vector3.Lerp(initialPosition, initialPosition + (center-initialPosition).normalized*0.5f, EasingFunc.Easing.QuadEaseOut(timer/selectTime));
+        transform.localScale = Vector3.Lerp(normalScale, normalScale*5, EasingFunc.Easing.SmoothInOut(timer/selectTime));
+        transform.position   = Vector3.Lerp(initialPosition, initialPosition + (center-initialPosition).normalized*0.5f, EasingFunc.Easing.SmoothInOut(timer/selectTime));
 
         if(Mathf.Abs(timer-selectTime)<=0.01f){
             timer = selectTime;

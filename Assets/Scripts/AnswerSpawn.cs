@@ -44,7 +44,8 @@ public class AnswerSpawn : MonoBehaviour
                 Destroy(answers[i].gameObject);
             }
             else{
-                answer.transform.localScale *= 1.5f;
+                answer.transform.localScale = Vector3.one * 5.8f;
+                answer.transform.localPosition = Vector3.up*(-6.65f);
             }
         } 
     }

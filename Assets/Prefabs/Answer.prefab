@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5046704981697416752}
   - component: {fileID: 5046704981697416757}
   - component: {fileID: 5046704981697416756}
+  - component: {fileID: 2869104626153964787}
   m_Layer: 6
   m_Name: Answer
   m_TagString: Untagged
@@ -201,3 +202,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_Type: 0
   hitbox: {fileID: 5046704981697416757}
+--- !u!114 &2869104626153964787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046704981697416754}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefc992cb79d07541aa7a453a9ddeb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: -5

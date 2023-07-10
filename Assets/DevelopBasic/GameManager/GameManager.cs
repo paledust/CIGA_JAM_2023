@@ -61,6 +61,7 @@ public class GameManager : Singleton<GameManager>
     public float GetCurrentJourneyProgress(){return journeyProgress[journeyIndex];}
     public string GetCurrentJourneyName(){return journeyName[journeyIndex];}
     public void ToNextJourney(){journeyIndex ++;}
+    public void ResetGameState(){journeyIndex = 0;}
 #region Game Pause
     public void PauseTheGame(){
         if(isPaused) return;

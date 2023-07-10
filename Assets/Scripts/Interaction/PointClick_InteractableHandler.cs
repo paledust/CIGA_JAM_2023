@@ -17,7 +17,6 @@ public class PointClick_InteractableHandler : MonoBehaviour
     [SerializeField] private AudioSource m_audio;
     [SerializeField] private AudioClip swichClip;
 [Header("Cursor")]
-    [SerializeField] private Texture2D interactCursorUI;
     [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
     [SerializeField, ShowOnly] private int interactionLock = 0;
     private Camera playerCam;
@@ -52,7 +51,6 @@ public class PointClick_InteractableHandler : MonoBehaviour
                 if(hoveringInteractable != hit_Interactable) {
                     if(hoveringInteractable!=null) hoveringInteractable.OnExitHover();
                     hoveringInteractable = hit_Interactable;
-                    Cursor.SetCursor(interactCursorUI, Vector2.right*32f, CursorMode.Auto);
                     hoveringInteractable.OnHover(isTouching, this);
                     if(isTouching){
                         booomParticle.transform.position = tipTrans.position;

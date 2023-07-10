@@ -23,6 +23,7 @@ public class SubtitleSpawner : MonoBehaviour
         GameObject spawnedText = GameObject.Instantiate(subtitle_Prefab, transform.position + transform.up*Random.Range(-spawnHeight/2, spawnHeight/2), Quaternion.identity);
         spawnedText.transform.parent = transform;
         spawnedText.GetComponent<TextMeshPro>().text = text;
+        
         spawnTime = Time.time;
     }
     void SpawnASubtitle(){
@@ -30,6 +31,7 @@ public class SubtitleSpawner : MonoBehaviour
         GameObject spawnedText = GameObject.Instantiate(subtitle_Prefab, transform.position + transform.up*Random.Range(-spawnHeight/2, spawnHeight/2), Quaternion.identity);
         spawnedText.transform.SetParent(transform);
         spawnedText.GetComponent<TextMeshPro>().text = spawnText[index];
+        EventHandler.Call_OnFeelWords(spawnText[index]);
         index ++;
         index = index%spawnText.Length;
         spawnTime = Time.time;

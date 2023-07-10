@@ -24,6 +24,8 @@ public static class EventHandler
     public static void Call_OnHandShake(){E_OnHandShake?.Invoke();}
     public static event Action<AnswerSelect> E_OnSelectAnswer;
     public static void Call_OnSelectAnswer(AnswerSelect answer){E_OnSelectAnswer?.Invoke(answer);}
+    public static event Action E_OnPressButton;
+    public static void Call_OnPressButton(){E_OnPressButton?.Invoke();}
 }
 
 //A More Strict Event System

@@ -12,7 +12,7 @@ public class TouchQuestions : BasicPointAndClickInteractable
     void TeleportToAPos(){
         Vector3 pos = transform.position;
         pos.x = Random.Range(-3.8f,3.8f);
-        pos.y = Random.Range(-3.4f,3.4f);
+        pos.y = Random.Range(-2.5f,3.4f);
         transform.position = pos;
         TouchTrying ++;
         if(TouchTrying>=TyrTime[index]){

@@ -34,11 +34,13 @@ public class PointClick_InteractableHandler : MonoBehaviour
         // MouseScrPos = new Vector2(Screen.width, Screen.height);
         handMoving = GetComponent<HandMoving>();
         Cursor.lockState = cursorLockMode;
-        Cursor.visible = false;
         tipPos = tipTrans.position;
         grabPos= grabTrans.position;
     }
     void Update(){
+        if(Cursor.visible){
+            Cursor.visible = false;
+        }
         tipPos = tipTrans.position;
         grabPos= grabTrans.position;
         // MouseScrPos = Mouse.current.position.ReadValue();

@@ -1600,6 +1600,7 @@ GameObject:
   - component: {fileID: 1303590541}
   - component: {fileID: 1303590540}
   - component: {fileID: 1303590539}
+  - component: {fileID: 1303590542}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1625,7 +1626,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
@@ -1636,10 +1637,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!212 &1303590540
@@ -1709,6 +1710,20 @@ Transform:
   m_Father: {fileID: 851878797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303590542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303590538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e73cdbb973b09042892f7594c7e2ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1303590539}
+  videoName: BK.mp4
 --- !u!1001 &1304351175
 PrefabInstance:
   m_ObjectHideFlags: 0
